@@ -1,0 +1,491 @@
+<!DOCTYPE html>
+<!-- saved from url=(0046)https://docs.open-mpi.org/en/v5.0.x/index.html -->
+<html class="writer-html5" lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/">
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Open MPI v5.0.x — Open MPI 5.0.x documentation</title>
+      <link rel="stylesheet" href="./Open MPI v5.0.x — Open MPI 5.0.x documentation_files/pygments.css" type="text/css">
+      <link rel="stylesheet" href="./Open MPI v5.0.x — Open MPI 5.0.x documentation_files/theme.css" type="text/css">
+    <link rel="canonical" href="https://docs.open-mpi.org/en/v5.0.x/index.html">
+  <!--[if lt IE 9]>
+    <script src="_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script type="text/javascript" async="" src="./Open MPI v5.0.x — Open MPI 5.0.x documentation_files/js"></script><script type="text/javascript" async="" src="./Open MPI v5.0.x — Open MPI 5.0.x documentation_files/analytics.js"></script><script data-url_root="./" id="documentation_options" src="./Open MPI v5.0.x — Open MPI 5.0.x documentation_files/documentation_options.js"></script>
+        <script src="./Open MPI v5.0.x — Open MPI 5.0.x documentation_files/jquery.js"></script>
+        <script src="./Open MPI v5.0.x — Open MPI 5.0.x documentation_files/underscore.js"></script>
+        <script src="./Open MPI v5.0.x — Open MPI 5.0.x documentation_files/_sphinx_javascript_frameworks_compat.js"></script>
+        <script src="./Open MPI v5.0.x — Open MPI 5.0.x documentation_files/doctools.js"></script>
+        <script src="./Open MPI v5.0.x — Open MPI 5.0.x documentation_files/sphinx_highlight.js"></script>
+        <script async="async" src="./Open MPI v5.0.x — Open MPI 5.0.x documentation_files/readthedocs-doc-embed.js"></script>
+    <script src="./Open MPI v5.0.x — Open MPI 5.0.x documentation_files/theme.js"></script>
+    <link rel="index" title="Index" href="https://docs.open-mpi.org/en/v5.0.x/genindex.html">
+    <link rel="search" title="Search" href="https://docs.open-mpi.org/en/v5.0.x/search.html">
+    <link rel="next" title="1. Quick start" href="https://docs.open-mpi.org/en/v5.0.x/quickstart.html"> 
+
+<!-- RTD Extra Head -->
+
+<link rel="stylesheet" href="./Open MPI v5.0.x — Open MPI 5.0.x documentation_files/readthedocs-doc-embed.css" type="text/css">
+
+<script type="application/json" id="READTHEDOCS_DATA">{"ad_free": false, "api_host": "https://readthedocs.org", "build_date": "2023-04-18T15:58:41Z", "builder": "sphinx", "canonical_url": null, "commit": "fe8b6b72", "docroot": "/docs/", "features": {"docsearch_disabled": false}, "global_analytics_code": "UA-17997319-1", "language": "en", "page": "index", "programming_language": "c", "project": "ompi", "proxied_api_host": "/_", "source_suffix": ".rst", "subprojects": {}, "theme": "sphinx_rtd_theme", "user_analytics_code": "G-362ESWDQ0Y", "version": "v5.0.x"}</script>
+
+<!--
+Using this variable directly instead of using `JSON.parse` is deprecated.
+The READTHEDOCS_DATA global variable will be removed in the future.
+-->
+<script type="text/javascript">
+READTHEDOCS_DATA = JSON.parse(document.getElementById('READTHEDOCS_DATA').innerHTML);
+</script>
+
+<script type="text/javascript" src="./Open MPI v5.0.x — Open MPI 5.0.x documentation_files/readthedocs-analytics.js" async="async"></script>
+
+<!-- end RTD <extrahead> -->
+<script src="./Open MPI v5.0.x — Open MPI 5.0.x documentation_files/js(1)" type="text/javascript" async=""></script><script src="./Open MPI v5.0.x — Open MPI 5.0.x documentation_files/ethicalads.min.js" type="text/javascript" async="" id="ethicaladsjs"></script><style>[data-ea-publisher].loaded,[data-ea-type].loaded{font-size:14px;font-family:-apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica Neue, Arial, Noto Sans, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol, Noto Color Emoji;font-weight:normal;font-style:normal;leter-spacing:0px;vertical-align:baseline;line-height:1.3em}[data-ea-publisher].loaded a,[data-ea-type].loaded a{text-decoration:none}[data-ea-publisher].loaded .ea-pixel,[data-ea-type].loaded .ea-pixel{display:none}[data-ea-publisher].loaded .ea-content,[data-ea-type].loaded .ea-content{margin:1em 1em 0.5em 1em;padding:1em;background:rgba(0,0,0,0.03);color:#505050}[data-ea-publisher].loaded .ea-content a:link,[data-ea-type].loaded .ea-content a:link{color:#505050}[data-ea-publisher].loaded .ea-content a:visited,[data-ea-type].loaded .ea-content a:visited{color:#505050}[data-ea-publisher].loaded .ea-content a:hover,[data-ea-type].loaded .ea-content a:hover{color:#373737}[data-ea-publisher].loaded .ea-content a:active,[data-ea-type].loaded .ea-content a:active{color:#373737}[data-ea-publisher].loaded .ea-content a strong,[data-ea-publisher].loaded .ea-content a b,[data-ea-type].loaded .ea-content a strong,[data-ea-type].loaded .ea-content a b{color:#088cdb}[data-ea-publisher].loaded .ea-callout a:link,[data-ea-type].loaded .ea-callout a:link{color:#6a6a6a}[data-ea-publisher].loaded .ea-callout a:visited,[data-ea-type].loaded .ea-callout a:visited{color:#6a6a6a}[data-ea-publisher].loaded .ea-callout a:hover,[data-ea-type].loaded .ea-callout a:hover{color:#505050}[data-ea-publisher].loaded .ea-callout a:active,[data-ea-type].loaded .ea-callout a:active{color:#505050}[data-ea-publisher].loaded .ea-callout a strong,[data-ea-publisher].loaded .ea-callout a b,[data-ea-type].loaded .ea-callout a strong,[data-ea-type].loaded .ea-callout a b{color:#088cdb}[data-ea-publisher].loaded .ea-callout a,[data-ea-type].loaded .ea-callout a{font-size:0.8em}[data-ea-publisher].loaded.dark .ea-content,[data-ea-type].loaded.dark .ea-content{background:rgba(255,255,255,0.05);color:#dcdcdc}[data-ea-publisher].loaded.dark .ea-content a:link,[data-ea-type].loaded.dark .ea-content a:link{color:#dcdcdc}[data-ea-publisher].loaded.dark .ea-content a:visited,[data-ea-type].loaded.dark .ea-content a:visited{color:#dcdcdc}[data-ea-publisher].loaded.dark .ea-content a:hover,[data-ea-type].loaded.dark .ea-content a:hover{color:#f6f6f6}[data-ea-publisher].loaded.dark .ea-content a:active,[data-ea-type].loaded.dark .ea-content a:active{color:#f6f6f6}[data-ea-publisher].loaded.dark .ea-content a strong,[data-ea-publisher].loaded.dark .ea-content a b,[data-ea-type].loaded.dark .ea-content a strong,[data-ea-type].loaded.dark .ea-content a b{color:#50baf9}[data-ea-publisher].loaded.dark .ea-callout a:link,[data-ea-type].loaded.dark .ea-callout a:link{color:#c3c3c3}[data-ea-publisher].loaded.dark .ea-callout a:visited,[data-ea-type].loaded.dark .ea-callout a:visited{color:#c3c3c3}[data-ea-publisher].loaded.dark .ea-callout a:hover,[data-ea-type].loaded.dark .ea-callout a:hover{color:#dcdcdc}[data-ea-publisher].loaded.dark .ea-callout a:active,[data-ea-type].loaded.dark .ea-callout a:active{color:#dcdcdc}[data-ea-publisher].loaded.dark .ea-callout a strong,[data-ea-publisher].loaded.dark .ea-callout a b,[data-ea-type].loaded.dark .ea-callout a strong,[data-ea-type].loaded.dark .ea-callout a b{color:#50baf9}@media (prefers-color-scheme: dark){[data-ea-publisher].loaded.adaptive .ea-content,[data-ea-type].loaded.adaptive .ea-content{background:rgba(255,255,255,0.05);color:#dcdcdc}[data-ea-publisher].loaded.adaptive .ea-content a:link,[data-ea-type].loaded.adaptive .ea-content a:link{color:#dcdcdc}[data-ea-publisher].loaded.adaptive .ea-content a:visited,[data-ea-type].loaded.adaptive .ea-content a:visited{color:#dcdcdc}[data-ea-publisher].loaded.adaptive .ea-content a:hover,[data-ea-type].loaded.adaptive .ea-content a:hover{color:#f6f6f6}[data-ea-publisher].loaded.adaptive .ea-content a:active,[data-ea-type].loaded.adaptive .ea-content a:active{color:#f6f6f6}[data-ea-publisher].loaded.adaptive .ea-content a strong,[data-ea-publisher].loaded.adaptive .ea-content a b,[data-ea-type].loaded.adaptive .ea-content a strong,[data-ea-type].loaded.adaptive .ea-content a b{color:#50baf9}[data-ea-publisher].loaded.adaptive .ea-callout a:link,[data-ea-type].loaded.adaptive .ea-callout a:link{color:#c3c3c3}[data-ea-publisher].loaded.adaptive .ea-callout a:visited,[data-ea-type].loaded.adaptive .ea-callout a:visited{color:#c3c3c3}[data-ea-publisher].loaded.adaptive .ea-callout a:hover,[data-ea-type].loaded.adaptive .ea-callout a:hover{color:#dcdcdc}[data-ea-publisher].loaded.adaptive .ea-callout a:active,[data-ea-type].loaded.adaptive .ea-callout a:active{color:#dcdcdc}[data-ea-publisher].loaded.adaptive .ea-callout a strong,[data-ea-publisher].loaded.adaptive .ea-callout a b,[data-ea-type].loaded.adaptive .ea-callout a strong,[data-ea-type].loaded.adaptive .ea-callout a b{color:#50baf9}}[data-ea-publisher].loaded .ea-content,[data-ea-type].loaded .ea-content{border:0px;border-radius:3px;box-shadow:0px 2px 3px rgba(0,0,0,0.15)}[data-ea-publisher].loaded.raised .ea-content,[data-ea-type].loaded.raised .ea-content{border:0px;border-radius:3px;box-shadow:0px 2px 3px rgba(0,0,0,0.15)}[data-ea-publisher].loaded.bordered .ea-content,[data-ea-type].loaded.bordered .ea-content{border:1px solid rgba(0,0,0,0.04);border-radius:3px;box-shadow:none}[data-ea-publisher].loaded.bordered.dark .ea-content,[data-ea-type].loaded.bordered.dark .ea-content{border:1px solid rgba(255,255,255,0.07)}@media (prefers-color-scheme: dark){[data-ea-publisher].loaded.bordered.adaptive .ea-content,[data-ea-type].loaded.bordered.adaptive .ea-content{border:1px solid rgba(255,255,255,0.07)}}[data-ea-publisher].loaded.flat .ea-content,[data-ea-type].loaded.flat .ea-content{border:0px;border-radius:3px;box-shadow:none}[data-ea-type="image"].loaded,[data-ea-publisher]:not([data-ea-type]).loaded,.ea-type-image{display:inline-block}[data-ea-type="image"].loaded .ea-content,[data-ea-publisher]:not([data-ea-type]).loaded .ea-content,.ea-type-image .ea-content{max-width:180px;overflow:auto;text-align:center}[data-ea-type="image"].loaded .ea-content>a>img,[data-ea-publisher]:not([data-ea-type]).loaded .ea-content>a>img,.ea-type-image .ea-content>a>img{width:120px;height:90px;display:inline-block}[data-ea-type="image"].loaded .ea-content>.ea-text,[data-ea-publisher]:not([data-ea-type]).loaded .ea-content>.ea-text,.ea-type-image .ea-content>.ea-text{margin-top:1em;font-size:1em;text-align:center}[data-ea-type="image"].loaded .ea-callout,[data-ea-publisher]:not([data-ea-type]).loaded .ea-callout,.ea-type-image .ea-callout{max-width:180px;margin:0em 1em 1em 1em;padding-left:1em;padding-right:1em;font-style:italic;text-align:right}[data-ea-type="image"].loaded.horizontal .ea-content,[data-ea-publisher]:not([data-ea-type]).loaded.horizontal .ea-content,.ea-type-image.horizontal .ea-content{max-width:320px}[data-ea-type="image"].loaded.horizontal .ea-content>a>img,[data-ea-publisher]:not([data-ea-type]).loaded.horizontal .ea-content>a>img,.ea-type-image.horizontal .ea-content>a>img{float:left;margin-right:1em}[data-ea-type="image"].loaded.horizontal .ea-content .ea-text,[data-ea-publisher]:not([data-ea-type]).loaded.horizontal .ea-content .ea-text,.ea-type-image.horizontal .ea-content .ea-text{margin-top:0em;text-align:left;overflow:auto}[data-ea-type="image"].loaded.horizontal .ea-callout,[data-ea-publisher]:not([data-ea-type]).loaded.horizontal .ea-callout,.ea-type-image.horizontal .ea-callout{max-width:320px;text-align:right}[data-ea-type="text"].loaded,.ea-type-text{font-size:14px}[data-ea-type="text"].loaded .ea-content,.ea-type-text .ea-content{text-align:left}[data-ea-type="text"].loaded .ea-callout,.ea-type-text .ea-callout{margin:0.5em 1em 1em 1em;padding-left:1em;padding-right:1em;text-align:right;font-style:italic}[data-ea-style="stickybox"].loaded{position:fixed;bottom:20px;right:20px;z-index:10}[data-ea-style="stickybox"].loaded .ea-type-image .ea-stickybox-hide{cursor:pointer;position:absolute;top:0.75em;right:0.75em;background-color:#fefefe;border:1px solid #088cdb;border-radius:50%;color:#088cdb;font-size:1em;text-align:center;height:1.5em;width:1.5em;line-height:1.5em}@media (max-width: 1300px){[data-ea-style="stickybox"].loaded{position:static;bottom:0;right:0;margin:auto;text-align:center}[data-ea-style="stickybox"].loaded .ea-stickybox-hide{display:none}}@media (min-width: 1301px){[data-ea-style="stickybox"].loaded .ea-type-image .ea-content{background:#dcdcdc}[data-ea-style="stickybox"].loaded.dark .ea-type-image .ea-content{background:#505050}}@media (min-width: 1301px) and (prefers-color-scheme: dark){[data-ea-style="stickybox"].loaded.adaptive .ea-type-image .ea-content{background:#505050}}[data-ea-style="fixedfooter"].loaded{position:fixed;bottom:0;left:0;z-index:10;width:100%;max-width:100%}[data-ea-style="fixedfooter"].loaded .ea-type-text{width:100%;max-width:100%;display:flex;z-index:10;background:#dcdcdc}[data-ea-style="fixedfooter"].loaded .ea-type-text .ea-content{border:0px;border-radius:3px;box-shadow:none}[data-ea-style="fixedfooter"].loaded .ea-type-text .ea-content{background-color:inherit;max-width:100%;margin:0;padding:1em;flex:auto}[data-ea-style="fixedfooter"].loaded .ea-type-text .ea-callout{max-width:100%;margin:0;padding:1em;flex:initial}@media (max-width: 576px){[data-ea-style="fixedfooter"].loaded .ea-type-text .ea-callout{display:none}}[data-ea-style="fixedfooter"].loaded .ea-type-text .ea-fixedfooter-hide{cursor:pointer;color:#505050;padding:1em;flex:initial;margin:auto 0}[data-ea-style="fixedfooter"].loaded .ea-type-text .ea-fixedfooter-hide span{padding:0.25em;font-size:0.8em;font-weight:bold;border:0.15em solid #505050;border-radius:0.5em;white-space:nowrap}[data-ea-style="fixedfooter"].loaded.dark .ea-type-text{background:#505050}[data-ea-style="fixedfooter"].loaded.dark .ea-type-text .ea-fixedfooter-hide span{color:#dcdcdc;border-color:#dcdcdc}@media (prefers-color-scheme: dark){[data-ea-style="fixedfooter"].loaded.adaptive .ea-type-text{background:#505050}[data-ea-style="fixedfooter"].loaded.adaptive .ea-type-text .ea-fixedfooter-hide span{color:#dcdcdc;border-color:#dcdcdc}}
+</style><script src="./Open MPI v5.0.x — Open MPI 5.0.x documentation_files/saved_resource" type="text/javascript" async=""></script></head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+
+          
+          
+          <a href="https://docs.open-mpi.org/en/v5.0.x/index.html#" class="icon icon-home">
+            Open MPI
+          </a>
+              <div class="version">
+                v5.0.x
+              </div>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="https://docs.open-mpi.org/en/v5.0.x/search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs">
+    <input type="hidden" name="check_keywords" value="yes">
+    <input type="hidden" name="area" value="default">
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul>
+<li class="toctree-l1"><a class="reference internal" href="https://docs.open-mpi.org/en/v5.0.x/quickstart.html">1. Quick start</a></li>
+<li class="toctree-l1"><a class="reference internal" href="https://docs.open-mpi.org/en/v5.0.x/getting-help.html">2. Getting help</a></li>
+<li class="toctree-l1"><a class="reference internal" href="https://docs.open-mpi.org/en/v5.0.x/release-notes/index.html">3. Release notes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="https://docs.open-mpi.org/en/v5.0.x/installing-open-mpi/index.html">4. Building and installing Open MPI</a></li>
+<li class="toctree-l1"><a class="reference internal" href="https://docs.open-mpi.org/en/v5.0.x/features/index.html">5. Open MPI-specific features</a></li>
+<li class="toctree-l1"><a class="reference internal" href="https://docs.open-mpi.org/en/v5.0.x/validate.html">6. Validating your installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="https://docs.open-mpi.org/en/v5.0.x/version-numbering.html">7. Version numbers and binary compatibility</a></li>
+<li class="toctree-l1"><a class="reference internal" href="https://docs.open-mpi.org/en/v5.0.x/mca.html">8. The Modular Component Architecture (MCA)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="https://docs.open-mpi.org/en/v5.0.x/building-apps/index.html">9. Building MPI applications</a></li>
+<li class="toctree-l1"><a class="reference internal" href="https://docs.open-mpi.org/en/v5.0.x/launching-apps/index.html">10. Launching MPI applications</a></li>
+<li class="toctree-l1"><a class="reference internal" href="https://docs.open-mpi.org/en/v5.0.x/tuning-apps/index.html">11. Run-time tuning MPI applications</a></li>
+<li class="toctree-l1"><a class="reference internal" href="https://docs.open-mpi.org/en/v5.0.x/app-debug/index.html">12. Debugging Open MPI Parallel Applications</a></li>
+<li class="toctree-l1"><a class="reference internal" href="https://docs.open-mpi.org/en/v5.0.x/faq/index.html">13. Frequently Asked Questions (FAQ)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="https://docs.open-mpi.org/en/v5.0.x/developers/index.html">14. Developer’s guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="https://docs.open-mpi.org/en/v5.0.x/contributing.html">15. Contributing to Open MPI</a></li>
+<li class="toctree-l1"><a class="reference internal" href="https://docs.open-mpi.org/en/v5.0.x/license/index.html">16. License</a></li>
+<li class="toctree-l1"><a class="reference internal" href="https://docs.open-mpi.org/en/v5.0.x/history.html">17. History of Open MPI</a></li>
+<li class="toctree-l1"><a class="reference internal" href="https://docs.open-mpi.org/en/v5.0.x/news/index.html">18. News</a></li>
+<li class="toctree-l1"><a class="reference internal" href="https://docs.open-mpi.org/en/v5.0.x/man-openmpi/index.html">19. Open MPI manual pages</a></li>
+<li class="toctree-l1"><a class="reference internal" href="https://docs.open-mpi.org/en/v5.0.x/man-openshmem/index.html">20. OpenSHMEM manual pages</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu">
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="https://docs.open-mpi.org/en/v5.0.x/index.html#">Open MPI</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="https://docs.open-mpi.org/en/v5.0.x/index.html#" class="icon icon-home" aria-label="Home"></a></li>
+      <li class="breadcrumb-item active">Open MPI v5.0.x</li>
+      <li class="wy-breadcrumbs-aside">
+              <a href="https://github.com/open-mpi/ompi/blob/v5.0.x/docs/index.rst" class="fa fa-github"> Edit on GitHub</a>
+      </li>
+  </ul>
+  <hr>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <img alt="_images/openmpi_logo.png" class="align-right" src="./Open MPI v5.0.x — Open MPI 5.0.x documentation_files/openmpi_logo.png">
+<section id="open-mpi-ompi-ver">
+<h1>Open MPI v5.0.x<a class="headerlink" href="https://docs.open-mpi.org/en/v5.0.x/index.html#open-mpi-ompi-ver" title="Permalink to this heading"></a></h1>
+<p><a class="reference external" href="https://www.open-mpi.org/">The Open MPI Project</a> is an open source
+implementation of the <a class="reference external" href="https://www.mpi-forum.org/docs/">Message Passing Interface (MPI) specification</a> that is developed and maintained
+by a consortium of academic, research, and industry partners.  Open
+MPI is therefore able to combine the expertise, technologies, and
+resources from all across the High Performance Computing community in
+order to build the best MPI library available.  Open MPI offers
+advantages for system and software vendors, application developers and
+computer science researchers.</p>
+</section>
+<section id="documentation-locations">
+<h1>Documentation locations<a class="headerlink" href="https://docs.open-mpi.org/en/v5.0.x/index.html#documentation-locations" title="Permalink to this heading"></a></h1>
+<p>Documentation for Open MPI can be found in the following locations:</p>
+<div class="wy-table-responsive"><table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>Open MPI version</p></th>
+<th class="head"><p>Documentation location</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>v5.0.0 and later</p></td>
+<td><p>Web: <a class="reference external" href="https://docs.open-mpi.org/">https://docs.open-mpi.org/</a></p>
+<p>Tarball: <code class="docutils literal notranslate"><span class="pre">docs/_build/html/index.html</span></code></p>
+<p>Installed: <code class="docutils literal notranslate"><span class="pre">$prefix/share/doc/openmpi/html/index.html</span></code></p>
+</td>
+</tr>
+<tr class="row-odd"><td><p>v4.1.x and earlier</p></td>
+<td><p>See the <a class="reference external" href="https://www.open-mpi.org/faq/">legacy Open MPI FAQ</a>
+and the README file in the source tarball.</p>
+<p>For example:</p>
+<ul class="simple">
+<li><p><a class="reference external" href="https://github.com/open-mpi/ompi/blob/v4.1.x/README">v4.1.x README file</a></p></li>
+<li><p><a class="reference external" href="https://github.com/open-mpi/ompi/blob/v4.0.x/README">v4.0.x README file</a></p></li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table></div>
+</section>
+<section id="release-announcements">
+<h1>Release announcements<a class="headerlink" href="https://docs.open-mpi.org/en/v5.0.x/index.html#release-announcements" title="Permalink to this heading"></a></h1>
+<p>The best way to hear about new Open MPI releases is via the
+<a class="reference external" href="https://lists.open-mpi.org/mailman/listinfo/announce">low-volume announcement mailing list</a>.</p>
+<p>Additionally, if you are a downstream packager of Open MPI (e.g., you
+package Open MPI for an operating system distribution), you may wish
+to sign up for the <a class="reference external" href="https://lists.open-mpi.org/mailman/listinfo/ompi-packagers">low-volume packagers list</a>.</p>
+</section>
+<section id="table-of-contents">
+<h1>Table of contents<a class="headerlink" href="https://docs.open-mpi.org/en/v5.0.x/index.html#table-of-contents" title="Permalink to this heading"></a></h1>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="https://docs.open-mpi.org/en/v5.0.x/quickstart.html">1. Quick start</a></li>
+<li class="toctree-l1"><a class="reference internal" href="https://docs.open-mpi.org/en/v5.0.x/getting-help.html">2. Getting help</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="https://docs.open-mpi.org/en/v5.0.x/getting-help.html#where-to-send">2.1. Where to send?</a></li>
+<li class="toctree-l2"><a class="reference internal" href="https://docs.open-mpi.org/en/v5.0.x/getting-help.html#for-problems-building-or-installing-open-mpi">2.2. For problems building or installing Open MPI</a></li>
+<li class="toctree-l2"><a class="reference internal" href="https://docs.open-mpi.org/en/v5.0.x/getting-help.html#for-problems-launching-mpi-or-openshmem-applications">2.3. For problems launching MPI or OpenSHMEM applications</a></li>
+<li class="toctree-l2"><a class="reference internal" href="https://docs.open-mpi.org/en/v5.0.x/getting-help.html#for-problems-running-mpi-or-openshmem-applications">2.4. For problems running MPI or OpenSHMEM applications</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="https://docs.open-mpi.org/en/v5.0.x/release-notes/index.html">3. Release notes</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="https://docs.open-mpi.org/en/v5.0.x/release-notes/general.html">3.1. General notes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="https://docs.open-mpi.org/en/v5.0.x/release-notes/platform.html">3.2. Platform Notes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="https://docs.open-mpi.org/en/v5.0.x/release-notes/compilers.html">3.3. Compiler Notes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="https://docs.open-mpi.org/en/v5.0.x/release-notes/run-time.html">3.4. General Run-Time Support Notes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="https://docs.open-mpi.org/en/v5.0.x/release-notes/mpi.html">3.5. MPI Functionality and Features</a></li>
+<li class="toctree-l2"><a class="reference internal" href="https://docs.open-mpi.org/en/v5.0.x/release-notes/openshmem.html">3.6. OpenSHMEM Functionality and Features</a></li>
+<li class="toctree-l2"><a class="reference internal" href="https://docs.open-mpi.org/en/v5.0.x/release-notes/mpi-collectives.html">3.7. MPI Collectives</a></li>
+<li class="toctree-l2"><a class="reference internal" href="https://docs.open-mpi.org/en/v5.0.x/release-notes/openshmem-collectives.html">3.8. OpenSHMEM Collectives</a></li>
+<li class="toctree-l2"><a class="reference internal" href="https://docs.open-mpi.org/en/v5.0.x/release-notes/networks.html">3.9. Network Support</a></li>
+<li class="toctree-l2"><a class="reference internal" href="https://docs.open-mpi.org/en/v5.0.x/release-notes/extensions.html">3.10. Open MPI Extensions</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="https://docs.open-mpi.org/en/v5.0.x/installing-open-mpi/index.html">4. Building and installing Open MPI</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="https://docs.open-mpi.org/en/v5.0.x/installing-open-mpi/quickstart.html">4.1. Quick start: Installing Open MPI</a></li>
+<li class="toctree-l2"><a class="reference internal" href="https://docs.open-mpi.org/en/v5.0.x/installing-open-mpi/definitions.html">4.2. Definitions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="https://docs.open-mpi.org/en/v5.0.x/installing-open-mpi/filesystem-requirements.html">4.3. Filesystem requirements</a></li>
+<li class="toctree-l2"><a class="reference internal" href="https://docs.open-mpi.org/en/v5.0.x/installing-open-mpi/vpath-builds.html">4.4. VPATH builds</a></li>
+<li class="toctree-l2"><a class="reference internal" href="https://docs.open-mpi.org/en/v5.0.x/installing-open-mpi/compilers-and-flags.html">4.5. Specifying compilers and flags</a></li>
+<li class="toctree-l2"><a class="reference internal" href="https://docs.open-mpi.org/en/v5.0.x/installing-open-mpi/required-support-libraries.html">4.6. Required support libraries</a></li>
+<li class="toctree-l2"><a class="reference internal" href="https://docs.open-mpi.org/en/v5.0.x/installing-open-mpi/configure-cli-options/index.html">4.7. <code class="docutils literal notranslate"><span class="pre">configure</span></code> command line options</a></li>
+<li class="toctree-l2"><a class="reference internal" href="https://docs.open-mpi.org/en/v5.0.x/installing-open-mpi/configure-output-summary.html">4.8. <code class="docutils literal notranslate"><span class="pre">configure</span></code> output summary</a></li>
+<li class="toctree-l2"><a class="reference internal" href="https://docs.open-mpi.org/en/v5.0.x/installing-open-mpi/make-targets.html">4.9. <code class="docutils literal notranslate"><span class="pre">make</span></code> targets</a></li>
+<li class="toctree-l2"><a class="reference internal" href="https://docs.open-mpi.org/en/v5.0.x/installing-open-mpi/installation-location.html">4.10. Installation location</a></li>
+<li class="toctree-l2"><a class="reference internal" href="https://docs.open-mpi.org/en/v5.0.x/installing-open-mpi/packagers.html">4.11. Advice for packagers</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="https://docs.open-mpi.org/en/v5.0.x/features/index.html">5. Open MPI-specific features</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="https://docs.open-mpi.org/en/v5.0.x/features/profiling.html">5.1. Open MPI profiling interface</a></li>
+<li class="toctree-l2"><a class="reference internal" href="https://docs.open-mpi.org/en/v5.0.x/features/extensions.html">5.2. Open MPI extensions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="https://docs.open-mpi.org/en/v5.0.x/features/ulfm.html">5.3. User-Level Fault Mitigation (ULFM)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="https://docs.open-mpi.org/en/v5.0.x/features/java.html">5.4. Open MPI Java bindings</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="https://docs.open-mpi.org/en/v5.0.x/validate.html">6. Validating your installation</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="https://docs.open-mpi.org/en/v5.0.x/validate.html#checking-your-open-mpi-configuration">6.1. Checking your Open MPI configuration</a></li>
+<li class="toctree-l2"><a class="reference internal" href="https://docs.open-mpi.org/en/v5.0.x/validate.html#testing-your-open-mpi-installation">6.2. Testing your Open MPI installation</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="https://docs.open-mpi.org/en/v5.0.x/version-numbering.html">7. Version numbers and binary compatibility</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="https://docs.open-mpi.org/en/v5.0.x/version-numbering.html#backwards-compatibility">7.1. Backwards Compatibility</a></li>
+<li class="toctree-l2"><a class="reference internal" href="https://docs.open-mpi.org/en/v5.0.x/version-numbering.html#software-version-number">7.2. Software Version Number</a></li>
+<li class="toctree-l2"><a class="reference internal" href="https://docs.open-mpi.org/en/v5.0.x/version-numbering.html#shared-library-version-number">7.3. Shared Library Version Number</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="https://docs.open-mpi.org/en/v5.0.x/mca.html">8. The Modular Component Architecture (MCA)</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="https://docs.open-mpi.org/en/v5.0.x/mca.html#terminology">8.1. Terminology</a></li>
+<li class="toctree-l2"><a class="reference internal" href="https://docs.open-mpi.org/en/v5.0.x/mca.html#setting-mca-parameter-values">8.2. Setting MCA parameter values</a></li>
+<li class="toctree-l2"><a class="reference internal" href="https://docs.open-mpi.org/en/v5.0.x/mca.html#selecting-which-open-mpi-components-are-used-at-run-time">8.3. Selecting which Open MPI components are used at run time</a></li>
+<li class="toctree-l2"><a class="reference internal" href="https://docs.open-mpi.org/en/v5.0.x/mca.html#common-mca-parameters">8.4. Common MCA parameters</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="https://docs.open-mpi.org/en/v5.0.x/building-apps/index.html">9. Building MPI applications</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="https://docs.open-mpi.org/en/v5.0.x/building-apps/quickstart.html">9.1. Quick start: Building MPI applications</a></li>
+<li class="toctree-l2"><a class="reference internal" href="https://docs.open-mpi.org/en/v5.0.x/building-apps/customizing-wrappers.html">9.2. Customizing wrapper compiler behavior</a></li>
+<li class="toctree-l2"><a class="reference internal" href="https://docs.open-mpi.org/en/v5.0.x/building-apps/extracting-wrapper-flags.html">9.3. Extracting flags from the wrapper compilers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="https://docs.open-mpi.org/en/v5.0.x/building-apps/removed-mpi-constructs.html">9.4. Removed MPI constructs</a></li>
+<li class="toctree-l2"><a class="reference internal" href="https://docs.open-mpi.org/en/v5.0.x/building-apps/deprecation-warnings.html">9.5. Deprecation warnings while compiling MPI applications</a></li>
+<li class="toctree-l2"><a class="reference internal" href="https://docs.open-mpi.org/en/v5.0.x/building-apps/building-static-apps.html">9.6. Building fully-static MPI applications</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="https://docs.open-mpi.org/en/v5.0.x/launching-apps/index.html">10. Launching MPI applications</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="https://docs.open-mpi.org/en/v5.0.x/launching-apps/quickstart.html">10.1. Quick start: Launching MPI applications</a></li>
+<li class="toctree-l2"><a class="reference internal" href="https://docs.open-mpi.org/en/v5.0.x/launching-apps/prerequisites.html">10.2. Prerequisites</a></li>
+<li class="toctree-l2"><a class="reference internal" href="https://docs.open-mpi.org/en/v5.0.x/launching-apps/pmix-and-prrte.html">10.3. The role of PMIx and PRRTE</a></li>
+<li class="toctree-l2"><a class="reference internal" href="https://docs.open-mpi.org/en/v5.0.x/launching-apps/localhost.html">10.4. Launching only on the local node</a></li>
+<li class="toctree-l2"><a class="reference internal" href="https://docs.open-mpi.org/en/v5.0.x/launching-apps/ssh.html">10.5. Launching with SSH</a></li>
+<li class="toctree-l2"><a class="reference internal" href="https://docs.open-mpi.org/en/v5.0.x/launching-apps/slurm.html">10.6. Launching with Slurm</a></li>
+<li class="toctree-l2"><a class="reference internal" href="https://docs.open-mpi.org/en/v5.0.x/launching-apps/lsf.html">10.7. Launching with LSF</a></li>
+<li class="toctree-l2"><a class="reference internal" href="https://docs.open-mpi.org/en/v5.0.x/launching-apps/tm.html">10.8. Launching with PBS / Torque</a></li>
+<li class="toctree-l2"><a class="reference internal" href="https://docs.open-mpi.org/en/v5.0.x/launching-apps/gridengine.html">10.9. Launching with Grid Engine</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="https://docs.open-mpi.org/en/v5.0.x/tuning-apps/index.html">11. Run-time tuning MPI applications</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="https://docs.open-mpi.org/en/v5.0.x/tuning-apps/networking/index.html">11.1. Networking support</a></li>
+<li class="toctree-l2"><a class="reference internal" href="https://docs.open-mpi.org/en/v5.0.x/tuning-apps/mpi-io/index.html">11.2. MPI-IO tuning options</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="https://docs.open-mpi.org/en/v5.0.x/app-debug/index.html">12. Debugging Open MPI Parallel Applications</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="https://docs.open-mpi.org/en/v5.0.x/app-debug/debug-tools.html">12.1. Parallel Debugging Tools</a></li>
+<li class="toctree-l2"><a class="reference internal" href="https://docs.open-mpi.org/en/v5.0.x/app-debug/debug-options.html">12.2. Open MPI Runtime Debugging Options</a></li>
+<li class="toctree-l2"><a class="reference internal" href="https://docs.open-mpi.org/en/v5.0.x/app-debug/serial-debug.html">12.3. Using Serial Debuggers to Debug Open MPI Applications</a></li>
+<li class="toctree-l2"><a class="reference internal" href="https://docs.open-mpi.org/en/v5.0.x/app-debug/lost-output.html">12.4. Application Output Lost with Abnormal Termination</a></li>
+<li class="toctree-l2"><a class="reference internal" href="https://docs.open-mpi.org/en/v5.0.x/app-debug/memchecker.html">12.5. Using Memchecker</a></li>
+<li class="toctree-l2"><a class="reference internal" href="https://docs.open-mpi.org/en/v5.0.x/app-debug/valgrind.html">12.6. Using Valgrind to Find Open MPI Application Errors</a></li>
+<li class="toctree-l2"><a class="reference internal" href="https://docs.open-mpi.org/en/v5.0.x/app-debug/mpir-tools.html">12.7. Using MPIR-based tools with Open MPI</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="https://docs.open-mpi.org/en/v5.0.x/faq/index.html">13. Frequently Asked Questions (FAQ)</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="https://docs.open-mpi.org/en/v5.0.x/faq/supported-systems.html">13.1. Supported systems</a></li>
+<li class="toctree-l2"><a class="reference internal" href="https://docs.open-mpi.org/en/v5.0.x/faq/sysadmin.html">13.2. System administrator-level technical information</a></li>
+<li class="toctree-l2"><a class="reference internal" href="https://docs.open-mpi.org/en/v5.0.x/faq/building-open-mpi.html">13.3. Building Open MPI</a></li>
+<li class="toctree-l2"><a class="reference internal" href="https://docs.open-mpi.org/en/v5.0.x/faq/running-mpi-apps.html">13.4. Running MPI applications</a></li>
+<li class="toctree-l2"><a class="reference internal" href="https://docs.open-mpi.org/en/v5.0.x/faq/fault-tolerance.html">13.5. Fault Tolerance</a></li>
+<li class="toctree-l2"><a class="reference internal" href="https://docs.open-mpi.org/en/v5.0.x/faq/troubleshooting.html">13.6. Troubleshooting</a></li>
+<li class="toctree-l2"><a class="reference internal" href="https://docs.open-mpi.org/en/v5.0.x/faq/large-clusters.html">13.7. Large Clusters</a></li>
+<li class="toctree-l2"><a class="reference internal" href="https://docs.open-mpi.org/en/v5.0.x/faq/general-tuning.html">13.8. General Tuning</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="https://docs.open-mpi.org/en/v5.0.x/developers/index.html">14. Developer’s guide</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="https://docs.open-mpi.org/en/v5.0.x/developers/prerequisites.html">14.1. Prerequisites</a></li>
+<li class="toctree-l2"><a class="reference internal" href="https://docs.open-mpi.org/en/v5.0.x/developers/git-github.html">14.2. GitHub, Git, and related topics</a></li>
+<li class="toctree-l2"><a class="reference internal" href="https://docs.open-mpi.org/en/v5.0.x/developers/compiler-pickyness.html">14.3. Compiler Pickyness by Default</a></li>
+<li class="toctree-l2"><a class="reference internal" href="https://docs.open-mpi.org/en/v5.0.x/developers/autogen.html">14.4. Running <code class="docutils literal notranslate"><span class="pre">autogen.pl</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="https://docs.open-mpi.org/en/v5.0.x/developers/building-open-mpi.html">14.5. Building Open MPI</a></li>
+<li class="toctree-l2"><a class="reference internal" href="https://docs.open-mpi.org/en/v5.0.x/developers/terminology.html">14.6. Open MPI terminology</a></li>
+<li class="toctree-l2"><a class="reference internal" href="https://docs.open-mpi.org/en/v5.0.x/developers/source-code.html">14.7. Source code</a></li>
+<li class="toctree-l2"><a class="reference internal" href="https://docs.open-mpi.org/en/v5.0.x/developers/frameworks.html">14.8. Internal frameworks</a></li>
+<li class="toctree-l2"><a class="reference internal" href="https://docs.open-mpi.org/en/v5.0.x/developers/gnu-autotools.html">14.9. Manually installing the GNU Autootools</a></li>
+<li class="toctree-l2"><a class="reference internal" href="https://docs.open-mpi.org/en/v5.0.x/developers/sphinx.html">14.10. Installing and running Sphinx (building the Open MPI docs)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="https://docs.open-mpi.org/en/v5.0.x/developers/rst-for-markdown-expats.html">14.11. ReStructured Text for those who know Markdown</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="https://docs.open-mpi.org/en/v5.0.x/contributing.html">15. Contributing to Open MPI</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="https://docs.open-mpi.org/en/v5.0.x/contributing.html#open-source-contributions">15.1. Open source contributions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="https://docs.open-mpi.org/en/v5.0.x/contributing.html#closed-source-contributions">15.2. Closed source contributions</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="https://docs.open-mpi.org/en/v5.0.x/license/index.html">16. License</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="https://docs.open-mpi.org/en/v5.0.x/license/index.html#open-mpi-license">16.1. Open MPI license</a></li>
+<li class="toctree-l2"><a class="reference internal" href="https://docs.open-mpi.org/en/v5.0.x/license/index.html#additional-licenses">16.2. Additional licenses</a></li>
+<li class="toctree-l2"><a class="reference internal" href="https://docs.open-mpi.org/en/v5.0.x/license/index.html#redistributed-code">16.3. Redistributed code</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="https://docs.open-mpi.org/en/v5.0.x/history.html">17. History of Open MPI</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="https://docs.open-mpi.org/en/v5.0.x/history.html#goals-of-the-open-mpi-project">17.1. Goals of the Open MPI Project</a></li>
+<li class="toctree-l2"><a class="reference internal" href="https://docs.open-mpi.org/en/v5.0.x/history.html#community">17.2. Community</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="https://docs.open-mpi.org/en/v5.0.x/news/index.html">18. News</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="https://docs.open-mpi.org/en/v5.0.x/news/news-main.html">18.1. Main updates (not on release branches yet)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="https://docs.open-mpi.org/en/v5.0.x/news/news-v5.0.x.html">18.2. Open MPI v5.0.x series</a></li>
+<li class="toctree-l2"><a class="reference internal" href="https://docs.open-mpi.org/en/v5.0.x/news/news-v4.1.x.html">18.3. Open MPI v4.1.x series</a></li>
+<li class="toctree-l2"><a class="reference internal" href="https://docs.open-mpi.org/en/v5.0.x/news/news-v4.0.x.html">18.4. Open MPI v4.0.x series</a></li>
+<li class="toctree-l2"><a class="reference internal" href="https://docs.open-mpi.org/en/v5.0.x/news/news-v3.1.x.html">18.5. Open MPI v3.1.x series</a></li>
+<li class="toctree-l2"><a class="reference internal" href="https://docs.open-mpi.org/en/v5.0.x/news/news-v3.0.x.html">18.6. Open MPI v3.0.x series</a></li>
+<li class="toctree-l2"><a class="reference internal" href="https://docs.open-mpi.org/en/v5.0.x/news/news-v2.x.html">18.7. Open MPI v2.x series</a></li>
+<li class="toctree-l2"><a class="reference internal" href="https://docs.open-mpi.org/en/v5.0.x/news/news-v1.x.html">18.8. Open MPI v1.x series</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="https://docs.open-mpi.org/en/v5.0.x/man-openmpi/index.html">19. Open MPI manual pages</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="https://docs.open-mpi.org/en/v5.0.x/man-openmpi/man1/index.html">19.1. Commands (section 1)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="https://docs.open-mpi.org/en/v5.0.x/man-openmpi/man3/index.html">19.2. MPI API manual pages (section 3)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="https://docs.open-mpi.org/en/v5.0.x/man-openmpi/man7/index.html">19.3. General information manual pages (section 7)</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="https://docs.open-mpi.org/en/v5.0.x/man-openshmem/index.html">20. OpenSHMEM manual pages</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="https://docs.open-mpi.org/en/v5.0.x/man-openshmem/man1/index.html">20.1. Commands (section 1)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="https://docs.open-mpi.org/en/v5.0.x/man-openshmem/man3/index.html">20.2. OpenSHMEM API manual pages (section 3)</a></li>
+</ul>
+</li>
+</ul>
+</div>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="https://docs.open-mpi.org/en/v5.0.x/quickstart.html" class="btn btn-neutral float-right" title="1. Quick start" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr><div><div id="rtd-sidebar" data-ea-publisher="readthedocs" data-ea-type="readthedocs-sidebar" data-ea-manual="true" class="ethical-rtd loaded" data-ea-keywords="c|hpc|mpi|readthedocs-project-636324|readthedocs-project-ompi" data-ea-campaign-types="community|house"><div class="ethical-sidebar"><div class="ethical-content"><a href="https://server.ethicalads.io/proxy/click/3071/075b108d-2c9d-4d6f-b72d-88b4a9989cf4/" rel="nofollow noopener" target="_blank" class="ethical-image-link"><img src="./Open MPI v5.0.x — Open MPI 5.0.x documentation_files/readthedocs-logo-fs8_k6Ps9wN.png" alt="Sponsored: Read the Docs"></a><div class="ethical-text"><a href="https://server.ethicalads.io/proxy/click/3071/075b108d-2c9d-4d6f-b72d-88b4a9989cf4/" rel="nofollow noopener" target="_blank"><strong class="ea-headline">Read the Docs for Business: </strong><span class="ea-body">Automated docs deployment of private &amp; public repos.</span><strong class="ea-cta"> Get started today.</strong></a></div></div><div class="ethical-callout"><small><em><a rel="nofollow noopener" target="_blank" href="https://www.ethicalads.io/?ref=rtd-sidebar">Ad by EthicalAds</a></em></small><span> &nbsp; · &nbsp; </span><a rel="nofollow noopener" target="_blank" href="https://www.ethicalads.io/advertisers/?ref=rtd-sidebar-buy-ads">ℹ️</a></div></div></div></div>
+
+  <div role="contentinfo">
+    <p>© Copyright 2003-2023, The Open MPI Community.
+      <span class="commit">Revision <code>fe8b6b72</code>.
+      </span></p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org/">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  
+
+  <div class="rst-versions" data-toggle="rst-versions" role="note" aria-label="Versions">
+    <span class="rst-current-version" data-toggle="rst-current-version">
+      <span class="fa fa-book"> Read the Docs</span>
+      v: v5.0.x
+      <span class="fa fa-caret-down"></span>
+    </span>
+    <div class="rst-other-versions"><!-- Inserted RTD Footer -->
+
+<div class="injected">
+
+  
+
+      
+      
+      
+      <dl>
+        <dt>Versions</dt>
+        
+        <dd class="rtd-current-item">
+          <a href="https://docs.open-mpi.org/en/v5.0.x/">v5.0.x</a>
+        </dd>
+        
+        <dd>
+          <a href="https://docs.open-mpi.org/en/v5.0.0rc11/">v5.0.0rc11</a>
+        </dd>
+        
+        <dd>
+          <a href="https://docs.open-mpi.org/en/v5.0.0rc10/">v5.0.0rc10</a>
+        </dd>
+        
+        <dd>
+          <a href="https://docs.open-mpi.org/en/v5.0.0rc9/">v5.0.0rc9</a>
+        </dd>
+        
+        <dd>
+          <a href="https://docs.open-mpi.org/en/v5.0.0rc8/">v5.0.0rc8</a>
+        </dd>
+        
+        <dd>
+          <a href="https://docs.open-mpi.org/en/v5.0.0rc7/">v5.0.0rc7</a>
+        </dd>
+        
+        <dd>
+          <a href="https://docs.open-mpi.org/en/v4.1.x/">v4.1.x</a>
+        </dd>
+        
+        <dd>
+          <a href="https://docs.open-mpi.org/en/v4.0.x/">v4.0.x</a>
+        </dd>
+        
+        <dd>
+          <a href="https://docs.open-mpi.org/en/main/">main</a>
+        </dd>
+        
+      </dl>
+      
+      
+
+      
+      
+      
+
+      
+      <dl>
+        
+        <!-- These are kept as relative links for internal installs that are http -->
+        <dt>On Read the Docs</dt>
+        <dd>
+          <a href="https://readthedocs.org/projects/ompi/">Project Home</a>
+        </dd>
+        <dd>
+          <a href="https://readthedocs.org/projects/ompi/builds/">Builds</a>
+        </dd>
+        <dd>
+          <a href="https://readthedocs.org/projects/ompi/downloads/">Downloads</a>
+        </dd>
+      </dl>
+      
+
+      
+
+      
+      <dl>
+        <dt>On GitHub</dt>
+        <dd>
+          <a href="https://github.com/open-mpi/ompi/blob/v5.0.x/docs/index.rst">View</a>
+        </dd>
+        
+        <dd>
+          <a href="https://github.com/open-mpi/ompi/edit/v5.0.x/docs/index.rst">Edit</a>
+        </dd>
+        
+      </dl>
+      
+      
+
+      
+      <dl>
+        <dt>Search</dt>
+        <dd>
+          <div style="padding: 6px;">
+            
+            <form id="flyout-search-form" class="wy-form" target="_blank" action="https://readthedocs.org/projects/ompi/search/" method="get">
+              <input type="text" name="q" aria-label="Search docs" placeholder="Search docs">
+              </form>
+          </div>
+        </dd>
+      </dl>
+      
+
+      <hr>
+
+      
+        <small>
+          <span>Hosted by <a href="https://readthedocs.org/">Read the Docs</a></span>
+          <span> · </span>
+          <a href="https://docs.readthedocs.io/page/privacy-policy.html">Privacy Policy</a>
+        </small>
+      
+
+      
+
+</div>
+</div>
+  </div>
+<script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+
+</body></html>

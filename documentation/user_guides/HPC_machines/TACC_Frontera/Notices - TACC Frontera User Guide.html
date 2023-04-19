@@ -1,0 +1,442 @@
+<!DOCTYPE html>
+<!-- saved from url=(0051)https://frontera-portal.tacc.utexas.edu/user-guide/ -->
+<html class=" js flexbox flexboxlegacy canvas canvastext webgl no-touch geolocation postmessage websqldatabase indexeddb hashchange history draganddrop websockets rgba hsla multiplebgs backgroundsize borderimage borderradius boxshadow textshadow opacity cssanimations csscolumns cssgradients cssreflections csstransforms csstransforms3d csstransitions fontface generatedcontent video audio localstorage sessionstorage webworkers no-applicationcache svg inlinesvg smil svgclippaths" lang="en"><!--<![endif]--><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+<meta content="IE=edge" http-equiv="X-UA-Compatible">
+<meta content="width=device-width, initial-scale=1.0" name="viewport">
+<meta content="Frontera User Guide" name="description">
+<meta content="Susan Lindsey" name="author">
+<link href="https://frontera-portal.tacc.utexas.edu/user-guide/img/favicon.ico" rel="shortcut icon">
+<title>Notices - TACC Frontera User Guide</title>
+<link href="./Notices - TACC Frontera User Guide_files/css" rel="stylesheet" type="text/css">
+<link href="./Notices - TACC Frontera User Guide_files/theme.css" rel="stylesheet" type="text/css">
+<link href="./Notices - TACC Frontera User Guide_files/theme_extra.css" rel="stylesheet" type="text/css">
+<link href="./Notices - TACC Frontera User Guide_files/github.min.css" rel="stylesheet">
+<link href="./Notices - TACC Frontera User Guide_files/extra.css" rel="stylesheet">
+<link href="./Notices - TACC Frontera User Guide_files/cms.bootstrap.4.3.1.css" rel="stylesheet">
+<script>
+    // Current page data
+    var mkdocs_page_name = "Notices";
+    var mkdocs_page_input_path = "index.md";
+    var mkdocs_page_url = null;
+  </script>
+<script src="./Notices - TACC Frontera User Guide_files/jquery-2.1.1.min.js">
+</script>
+<script defer="" src="./Notices - TACC Frontera User Guide_files/modernizr-2.8.3.min.js"></script>
+<script src="./Notices - TACC Frontera User Guide_files/highlight.min.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+<script>
+      /** Set position of TOC menu */
+      function setTOCPosition() {
+        var fromTop = 0;
+        var navbarHeight = $('#frontera-top-nav').height();
+
+        if ($(document).scrollTop() < navbarHeight) {
+          fromTop = $('#frontera-top-nav-container').height() - $(document).scrollTop();
+        }
+
+        $('.wy-nav-side').css({ top: fromTop });
+      }
+
+      /** Resize TOC menu */
+      function resizeMenu() {
+        var intervalID = setInterval(setTOCPosition, 5)
+        setTimeout(function(){clearInterval(intervalID)},500)
+      }
+
+      /**
+       * Trigger resizeMenu on click of certain elements within given element
+       * @param {HTMLElement} context - The element within which to search
+       */
+      function resizeMenuOnClicks(context) {
+        $(context).contents().find('a').each(a => { a.target = '_parent'; });
+        $(context).contents().find('.navbar-toggler').on('click',resizeMenu);
+        $(context).contents().find('.dropdown-toggle').on('click',resizeMenu);
+        $(context).contents().find('[data-toggle="wy-nav-top"]').on('click',resizeMenu);
+      }
+
+      $(document).ready(function() {
+        setTOCPosition();
+        $(document).scroll(setTOCPosition);
+        $(window).resize(setTOCPosition);
+        resizeMenuOnClicks(document.getElementById('frontera-top-nav'));
+        window.addEventListener('docs.headerElementUpdate', e => {
+          resizeMenuOnClicks(e.detail.element);
+        });
+      });
+  </script>
+<link href="./Notices - TACC Frontera User Guide_files/css(1)" id="css-site-font" rel="stylesheet">
+<link href="./Notices - TACC Frontera User Guide_files/site.header.docs.css" id="css-site-header" rel="stylesheet">
+<link href="./Notices - TACC Frontera User Guide_files/site.header.css" id="css-site-header" rel="stylesheet">
+<style>
+  /* To override Docs' FontAwesome styles in `theme.css` */
+  .icon:not(.wy-side-nav-search a.icon)::before {
+    font-family: Cortal-Icons;
+  }
+  /* To retain font of sidebar title (`.wy-side-nav-search > a`) */
+  .wy-side-nav-search a.icon {
+    font-family: inherit !important; /* override `site.header.css` */
+  }
+  </style>
+<link href="./Notices - TACC Frontera User Guide_files/site.header(1).css" id="css-site-search-frontera" rel="stylesheet">
+<link href="https://frontera-portal.tacc.utexas.edu/user-guide/docs/user-guide.pdf" rel="alternate" title="PDF" type="application/pdf"><template></template></head>
+<body class="wy-body-for-nav" role="document">
+<div id="frontera-top-nav-container">
+<div id="frontera-top-nav">
+<!-- Sponsor Logos -->
+<div id="header-branding" class="branding-header ">
+  
+  
+    
+      
+        
+        <a href="https://www.nsf.gov/" target="_blank">
+          <img class="branding-logo branding-nsf" src="./Notices - TACC Frontera User Guide_files/nsf-white.png" crossorigin="anonymous" alt="NSF Logo">
+        </a>
+        
+      
+    
+  
+    
+      
+        
+        
+        <span class="branding-seperator"></span>
+        <a href="https://www.tacc.utexas.edu/" target="_blank">
+          <img class="branding-logo branding-tacc" src="./Notices - TACC Frontera User Guide_files/tacc-white.png" crossorigin="anonymous" alt="TACC Logo">
+        </a>
+        
+      
+    
+  
+    
+      
+        
+        
+        <span class="branding-seperator"></span>
+        <a href="https://www.utexas.edu/" target="_blank">
+          <img class="branding-logo branding-utaustin" src="./Notices - TACC Frontera User Guide_files/utaustin-white.png" crossorigin="anonymous" alt="University of Texas at Austin Logo">
+        </a>
+        
+      
+    
+  
+</div>
+<script type="module">
+  import * as importHTML from '/static/site_cms/js/modules/importHTML.js';
+
+  const placeholder = document.getElementById('header-branding');
+
+  importHTML.replaceFromURL('/cms/header/branding/markup/', placeholder);
+</script>
+<!-- Navigation Bar -->
+<nav class="s-header navbar navbar-expand-xl navbar-dark" id="s-header">
+<!-- Portal Logo -->
+<a id="header-logo" class="navbar-brand " href="https://frontera-portal.tacc.utexas.edu/" target="_self">
+      <img class="portal-logo " src="./Notices - TACC Frontera User Guide_files/frontera-white-solo.png" crossorigin="anonymous" alt="Frontera Logo">
+    </a>
+<script type="module">
+    import * as importHTML from '/static/site_cms/js/modules/importHTML.js';
+  
+    const placeholder = document.getElementById('header-logo');
+  
+    importHTML.replaceFromURL('/cms/header/logo/markup/', placeholder);
+  </script>
+<!-- Navbar Accordian Toggle on Small Screens  -->
+<button aria-controls="navbarsExpandTarget" aria-expanded="false" aria-label="Toggle navigation" class="navbar-toggler" data-target="#navbarsExpandTarget" data-toggle="collapse" type="button">
+<span class="navbar-toggler-icon"></span>
+</button>
+<!-- Navbar Links -->
+<div class="collapse navbar-collapse" id="navbarsExpandTarget">
+<ul class="s-cms-nav navbar-nav" id="s-cms-nav">
+<!-- FAQ: This template loads independently at a unique url (see `urls.py`)
+          so Portal and User Guide can render this markup into their markup. -->
+<!-- FAQ: This template lacks the `ul.s-cms-nav` tag because Portal usage—via
+          JavaScript—relies on `innerHTML` instead of `insertAdjacentHTML`. -->
+
+
+
+
+
+
+<li class="nav-item"><a class="nav-link" href="https://frontera-portal.tacc.utexas.edu/training/">
+    Training
+    
+  </a></li><li class="nav-item active"><a class="nav-link" href="https://frontera-portal.tacc.utexas.edu/user-guide/">
+    User Guide
+    
+  </a></li><li class="nav-item"><a class="nav-link" href="https://frontera-portal.tacc.utexas.edu/allocations/">
+    Allocations
+    
+  </a></li><li class="nav-item"><a class="nav-link" href="https://frontera-portal.tacc.utexas.edu/fellowship/">
+    Fellowships
+    
+  </a></li><li class="nav-item"><a class="nav-link" href="https://frontera-portal.tacc.utexas.edu/news/">
+    News
+    
+  </a></li><li class="nav-item"><a class="nav-link" href="https://frontera-portal.tacc.utexas.edu/about/">
+    About
+    
+  </a></li><li class="nav-item"><a class="nav-link" href="https://frontera-portal.tacc.utexas.edu/help/">
+    Help
+    
+  </a></li>
+
+</ul>
+<script type="module">
+  import flagLinkActive from '/static/site_cms/js/modules/flagLinkActive.js';
+  import * as importHTML from '/static/site_cms/js/modules/importHTML.js';
+
+  const container = document.getElementById('s-cms-nav');
+
+  importHTML.insertFromURL('/cms/nav/pages/markup/', container).then(container => {
+    flagLinkActive({
+      activeClassname: 'active',
+      linkSelector: 'a',
+      scopeElement: container,
+      ancestorActiveElementSelector: 'li'
+    });
+
+    window.dispatchEvent(new CustomEvent('docs.headerElementUpdate', {
+      detail: { element: container }
+    }));
+  });
+</script>
+<tacc-search-bar class="s-search-bar form-inline ml-auto" id="s-search-bar"><template shadowrootmode="open"><link crossorigin="anonymous" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" id="css-bootstrap" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" rel="stylesheet">
+<!-- FAQ: This template loads independently at a unique url (see `urls.py`)
+          so Portal and User Guide can render this markup into their markup. -->
+
+<style type="text/css">
+  /* SEE: https://github.com/TACC/Core-Styles/blob/main/source/_imports/elements/tacc-search-bar.md */
+  :host { visibility: hidden; height: 0; }
+</style>
+<link rel="stylesheet" href="https://frontera-portal.tacc.utexas.edu/static/site_cms/css/build/site.tacc-search-bar.css">
+
+<form part="form" method="get" action="https://frontera-portal.tacc.utexas.edu/search">
+  <label for="header-search" class="u-hide--visually" part="label">
+    Search
+  </label>
+
+  <input part="input" id="header-search" type="search" name="query_string" placeholder="Search" data-testid="input" autocomplete="off" minlength="3" value="">
+  <input type="hidden" name="page" value="1">
+
+  <button part="button" type="submit" class="icon icon-search">
+    <span class="u-hide--visually">Search</span>
+  </button>
+</form></template>
+<!-- The search bar is populated here (from an external template). -->
+</tacc-search-bar>
+
+<!-- Populate search field value from matching URL query parameter -->
+<script>
+  function populateSearchFieldValueFromURLParams() {
+    import('/static/site_cms/js/modules/inputFieldValue.js').then((inputFieldValue) => {
+      const shadowRoot = document.getElementById('s-search-bar').shadowRoot;
+
+      inputFieldValue.update(shadowRoot, 'query_string');
+    });
+  }
+</script>
+<script type="module">
+  import * as importHTML from '/static/site_cms/js/modules/importHTML.js';
+  import * as registerCustomElement from '/static/site_cms/js/modules/registerCustomElement.js';
+
+  importHTML.getFromURL('/cms/nav/search/markup/').then(markup => {
+    // Bootstrap must be enabled (but not while attached to document)
+    // FAQ: This Bootstrap is not needed outside search, so it was disabled
+    // NOTE: Alternate solutions are add from direct string or add from template
+    const bootstrapLink = document.getElementById('css-bootstrap');
+    bootstrapLink.remove();
+    bootstrapLink.disabled = false;
+
+    markup = bootstrapLink.outerHTML + markup;
+    registerCustomElement.fromHTMLString(markup, 'tacc-search-bar');
+
+    // Populate search field value
+    populateSearchFieldValueFromURLParams();
+  });
+</script>
+<ul class="s-portal-nav navbar-nav" id="portal-nav">
+
+
+<!-- FAQ: This template loads independently at a unique url (see `urls.py`)
+          so CMS and User Guide can render this markup into their markup. -->
+
+
+<style type="text/css">
+  .s-portal-nav .icon {
+    margin-right: 0.25em;
+
+    /* Copied from FontAwesome `.fa-lg` */
+    font-size: 1.3em;
+    vertical-align: text-bottom; /* tweaked to align better */
+  }
+  .s-portal-nav .nav-link .icon {
+      font-size: 1.5em;
+      vertical-align: middle; /* tweaked to align better */
+  }
+</style>
+
+<li class="nav-item">
+  <a class="nav-link" href="https://frontera-portal.tacc.utexas.edu/auth/agave/">
+    <i class="icon icon-user"></i> Log in
+  </a>
+</li>
+
+</ul>
+<script type="module">
+  import * as importHTML from '/static/site_cms/js/modules/importHTML.js';
+
+  const container = document.getElementById('portal-nav');
+
+  importHTML.insertFromURL('/core/markup/nav', container).then(container => {
+    window.dispatchEvent(new CustomEvent('docs.headerElementUpdate', {
+      detail: { element: container }
+    }));
+  });
+</script>
+</div>
+</nav>
+</div>
+</div>
+<div class="wy-grid-for-nav" id="wy-grid-for-nav">
+<nav class="wy-nav-side stickynav" data-toggle="wy-nav-shift" style="top: 100px;">
+<div class="wy-side-nav-search">
+<a class="icon icon-home" href="https://frontera-portal.tacc.utexas.edu/user-guide/"> TACC Frontera User Guide</a>
+<div role="search">
+<form action="https://frontera-portal.tacc.utexas.edu/user-guide/search.html" class="wy-form" id="rtd-search-form" method="get">
+<input name="q" placeholder="Search docs" title="Type search term here" type="text">
+</form>
+</div>
+</div>
+<div aria-label="main navigation" class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation">
+<ul class="current">
+<li class="toctree-l1 current">
+<a class="reference internal current" href="https://frontera-portal.tacc.utexas.edu/user-guide/"><span class="toctree-expand"></span>Notices</a>
+<ul class="current">
+</ul>
+</li>
+<li class="toctree-l1">
+<a class="reference internal" href="https://frontera-portal.tacc.utexas.edu/user-guide/intro/">Introduction</a>
+</li>
+<li class="toctree-l1">
+<a class="reference internal" href="https://frontera-portal.tacc.utexas.edu/user-guide/quickstart/">Quickstart</a>
+</li>
+<li class="toctree-l1">
+<a class="reference internal" href="https://frontera-portal.tacc.utexas.edu/user-guide/admin/">Account Administration</a>
+</li>
+<li class="toctree-l1">
+<a class="reference internal" href="https://frontera-portal.tacc.utexas.edu/user-guide/portal/">Frontera User Portal</a>
+</li>
+<li class="toctree-l1">
+<a class="reference internal" href="https://frontera-portal.tacc.utexas.edu/user-guide/conduct/">Good Conduct on Frontera</a>
+</li>
+<li class="toctree-l1">
+<a class="reference internal" href="https://frontera-portal.tacc.utexas.edu/user-guide/files/">File Systems</a>
+</li>
+<li class="toctree-l1">
+<a class="reference internal" href="https://frontera-portal.tacc.utexas.edu/user-guide/transferring/">Transferring Files</a>
+</li>
+<li class="toctree-l1">
+<a class="reference internal" href="https://frontera-portal.tacc.utexas.edu/user-guide/launching/">Launching Applications</a>
+</li>
+<li class="toctree-l1">
+<a class="reference internal" href="https://frontera-portal.tacc.utexas.edu/user-guide/running/">Running Jobs</a>
+</li>
+<li class="toctree-l1">
+<a class="reference internal" href="https://frontera-portal.tacc.utexas.edu/user-guide/scripts/">Sample Job Scripts</a>
+</li>
+<li class="toctree-l1">
+<a class="reference internal" href="https://frontera-portal.tacc.utexas.edu/user-guide/jobmanagement/">Job Management</a>
+</li>
+<li class="toctree-l1">
+<a class="reference internal" href="https://frontera-portal.tacc.utexas.edu/user-guide/building/">Building Software</a>
+</li>
+<li class="toctree-l1">
+<a class="reference internal" href="https://frontera-portal.tacc.utexas.edu/user-guide/programming/">Programming and Performance</a>
+</li>
+<li class="toctree-l1">
+<a class="reference internal" href="https://frontera-portal.tacc.utexas.edu/user-guide/ml/">Machine Learning</a>
+</li>
+<li class="toctree-l1">
+<a class="reference internal" href="https://frontera-portal.tacc.utexas.edu/user-guide/vis/">Visualization on Frontera</a>
+</li>
+<li class="toctree-l1">
+<a class="reference internal" href="https://frontera-portal.tacc.utexas.edu/user-guide/jupyter/">Jupyter Sessions</a>
+</li>
+<li class="toctree-l1">
+<a class="reference internal" href="https://frontera-portal.tacc.utexas.edu/user-guide/system/">System Architecture</a>
+</li>
+<li class="toctree-l1">
+<a class="reference internal" href="https://frontera-portal.tacc.utexas.edu/user-guide/cloud/">Cloud Services</a>
+</li>
+<li class="toctree-l1">
+<a class="reference internal" href="https://frontera-portal.tacc.utexas.edu/user-guide/containers/">Containers</a>
+</li>
+<li class="toctree-l1">
+<a class="reference internal" href="https://frontera-portal.tacc.utexas.edu/user-guide/help/">Help Desk</a>
+</li>
+<li class="toctree-l1">
+<a class="reference internal" href="https://frontera-portal.tacc.utexas.edu/user-guide/refs/">References</a>
+</li>
+</ul>
+</div>
+      &nbsp;
+    </nav>
+<section class="wy-nav-content-wrap" data-toggle="wy-nav-shift">
+<nav aria-label="top navigation" class="wy-nav-top" role="navigation">
+<i class="fa fa-bars" data-toggle="wy-nav-top"></i>
+<a href="https://frontera-portal.tacc.utexas.edu/user-guide/">TACC Frontera User Guide</a>
+</nav>
+<div class="wy-nav-content">
+<div class="rst-content">
+<div aria-label="breadcrumbs navigation" role="navigation">
+<ul class="wy-breadcrumbs">
+<li><a href="https://frontera-portal.tacc.utexas.edu/user-guide/">Docs</a> »</li>
+<li>Notices</li>
+<li class="wy-breadcrumbs-aside">
+</li>
+</ul>
+<hr>
+</div>
+<div role="main">
+<div class="section">
+<p class="userguidetitle">Frontera User Guide</p>
+<p><span style="font-size:90%;"><i>Last update: September 15, 2022</i>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="https://frontera-portal.tacc.utexas.edu/user-guide/docs/user-guide.pdf">Download PDF <i class="fa fa-file-pdf-o"></i></a></span></p>
+<h1 id="status-updates-and-notices">Status Updates and Notices</h1>
+<ul>
+<li><strong>All users: refer to updated <a href="https://frontera-portal.tacc.utexas.edu/user-guide/vis#remote-desktop-access">Remote Desktop Access</a> instructions.</strong> (07/21/2021)</li>
+<li><strong>New Queue: A new queue: "<code>small</code>" has been created specifically for one and two node jobs</strong>. Jobs of one or two nodes that will run for up to 48 hours should be submitted to this new <a href="https://frontera-portal.tacc.utexas.edu/user-guide/running#frontera-production-queues"><code>small</code> queue</a>.  The <code>normal</code> queue now has a lower limit of three nodes for all jobs. These new limits will improve the turnaround time for all jobs in the <code>normal</code> and <code>small</code> queues. (03-30-21) </li>
+<li><strong>Frontera has new <a href="https://frontera-portal.tacc.utexas.edu/user-guide/system/#large-memory-nodes">large memory nodes</a></strong>, accessible via the <a href="https://frontera-portal.tacc.utexas.edu/user-guide/running#frontera-production-queues"><code>nvdimm</code> queue</a>. (04/03/20)</li>
+<li>Users now have access to additional <a href="https://frontera-portal.tacc.utexas.edu/user-guide/portal">Frontera User Portal</a> functionality. <strong>Log in the portal to access your <a href="https://frontera-portal.tacc.utexas.edu/workbench/dashboard">dashboard</a> and other features.</strong> (03-25-20)</li>
+<li>TACC Staff have put forth new file system and job submission guidelines. <strong>All users: read <a href="http://portal.tacc.utexas.edu/tutorials/managingio">Managing I/O on TACC Resources</a>.</strong> (01/09/20)</li>
+<li><strong>Frontera's <a href="https://frontera-portal.tacc.utexas.edu/user-guide/system#gpu-nodes">GPU</a> queues, <code>rtx</code> and <code>rtx-dev</code> are now open.</strong> See <a href="https://frontera-portal.tacc.utexas.edu/user-guide/running/#frontera-production-queues">Frontera's production queues</a> for more information. Execute <a href="https://frontera-portal.tacc.utexas.edu/user-guide/jobmanagement/#taccs-qlimits-command"><code>qlimits</code></a> to display Frontera's queue configurations and charge rates. (12/07/19)</li>
+<li><strong>The <a href="https://vis.tacc.utexas.edu/">TACC Visualization Portal</a> now supports Frontera job submission for VNC and DCV remote desktops as well as Jupyter Notebook sessions.</strong> We recommend submitting to the <code>development queue</code> for fastest turn-around. (12/05/2019)</li>
+<li><strong>Frontera's <code>flex</code> queue is now open.</strong> Jobs in this queue are charged a lower rate (.8 SUs) but are pre-emptable after a guaranteed runtime of at least one hour. (10/30/2019) </li>
+<li>Please run all your jobs out of the <code>$SCRATCH</code> filesystem, instead of <code>$WORK</code>, to preserve the stability of the system. (10/10/2019)</li>
+<li>You may now <strong><a href="https://portal.tacc.utexas.edu/news/subscribe">subscribe</a> to <a href="https://portal.tacc.utexas.edu/user-news/-/news/Frontera">Frontera User News</a></strong>. Stay up-to-date on Frontera's status, scheduled maintenances and other notifications. (10/10/2019) </li>
+<li><strong>All users: read the <a href="https://frontera-portal.tacc.utexas.edu/user-guide/conduct">Good Conduct</a> section.</strong> Frontera is a shared resource and your actions can impact other users. (10/10/2019) </li>
+</ul>
+<p><img alt="Frontera Art" src="./Notices - TACC Frontera User Guide_files/img-frontera-art.jpg"></p>
+</div>
+</div>
+</div>
+</div>
+</section>
+</div>
+<div aria-label="versions" class="rst-versions" role="note">
+<span class="rst-current-version" data-toggle="rst-current-version">
+<span style="margin-left: 15px"><a href="https://frontera-portal.tacc.utexas.edu/user-guide/intro/" style="color: #fcfcfc">Next »</a></span>
+</span>
+</div>
+<script>var base_url = '.';</script>
+<script src="./Notices - TACC Frontera User Guide_files/theme.js"></script>
+<script>
+      window.SphinxRtdTheme.Navigation.enable();
+    </script>
+<script defer="" src="./Notices - TACC Frontera User Guide_files/main.js"></script>
+<script crossorigin="anonymous" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" src="./Notices - TACC Frontera User Guide_files/bootstrap.min.js"></script>
+
+
+
+</body></html>

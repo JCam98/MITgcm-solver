@@ -1,0 +1,108 @@
+/* MISCELLANEOUS */
+
+h2 {
+    color: #333333;
+}
+
+h1 {
+    font-size: 2em;
+    color: #039;
+    font-family: "Roboto Slab","ff-tisa-web-pro","Georgia",Arial,sans-serif;
+    text-transform: uppercase;
+	line-height:1.5; 
+}
+
+.pagetitle {
+    font-size: 2em;
+    color: #039;
+    font-family: "Roboto Slab","ff-tisa-web-pro","Georgia",Arial,sans-serif;
+    text-transform: uppercase;
+	line-height:1.5; 
+}
+.intro-text {
+    font-style: italic;
+}
+
+code { color: maroon; white-space: nowrap; }
+
+.userguidetitle	{font-size:225%;font-weight:bold;}
+
+.job-script	{background-color:#efd5bf;color:black;font-size:.9em;padding:10px;overflow:auto;}
+.cmd-line	{background-color:#e4edf6;color:black;font-size:.9em;padding:10px;overflow:auto;}
+.syntax		{background-color:#dddddd;color:black;font-size:.9em;}
+
+.msg-alert	{background-color:#cccccc;padding:10px;font-weight:bold;border-style:solid;border-width:1px;overflow:auto;}
+.msg-info	{padding:10px;font-weight:bold;border-style:solid;border-width:1px;overflow:auto;}
+
+li.toctree-l1	{text-indent:0px;font-size: 1.1em;}
+li.toctree-l2	{text-indent:0px;font-size:1.0em;}
+li.toctree-l3	{text-indent:.9px;}
+
+a.toctree-l1	{text-indent:0px;font-size:1.0em;font-weight:bold;color:orange;}  
+a.toctree-l2	{text-indent:10px;font-size:.8em;}  
+a.toctree-l3	{text-indent:15px;font-size:.7em;font-weight:bold;color:darkblue;}  
+
+.wy-side-nav-search {background-color:#b64e37}
+.wy-nav-side {background-color: #040545}
+.wy-nav-content { max-width: 100%; }
+
+
+
+/* THEME STYLE ADDITIONS */
+
+.rst-content img {
+    border: 1px solid #404040; /* from `body { color }` via `theme.css` */
+}
+
+
+
+/* CMS */
+
+/* Position navigation at expected initial height as soon as possible */
+/* FAQ: This style be overriden by JavaScript on load, resize, and scroll */
+nav.stickynav {
+    /* Override `top: 0` (in `theme.css`) */
+    top: 99px;
+}
+
+/* Style the header only as necessary */
+/* TODO: Prevent the need for this ruleset (see directions within) */
+#frontera-top-nav {
+    /* Prevent header size change based on content height */
+    /* RFE: Update User Guides sidebar navigation to not require JavaScript */
+    /* WARNING: If header height changes, then this number must change */
+    min-height: 99px;
+
+    /* TODO: Make this be styled by the custom element */
+    /* SEE: https://developer.mozilla.org/en-US/docs/Web/CSS/:host() */
+    /* SEE: https://github.com/w3c/webcomponents/issues/426 */
+    display: block;
+
+    /* TODO: Remove this when `frontera-cms` has this color set on `cms-branded-navigation` */
+    background-color: rgb(51, 51, 51);
+}
+
+/* FP-245: On mobile, position portal nav toggle so docs nav doesn't cover it */
+/*
+.s-header .navbar-toggle {
+    ???
+}
+*/
+
+/* Prevent User Guide styles from affecting header styles */
+.s-header a:visited {
+    /* Override `color: …` (from `theme.css`) */
+    color: unset;
+}
+.branding-header img,
+.s-header img {
+    /* Override `max-width: 100%` (via `img` from `theme.css`) */
+    max-width: unset;
+}
+@media screen and (max-width: 768px) {
+    .branding-header img,
+    .s-header img {
+        /* Override `max-width: 100%` (via `img` from `theme.css` at `max-width: 768px`) */
+        width: unset;
+    }
+}

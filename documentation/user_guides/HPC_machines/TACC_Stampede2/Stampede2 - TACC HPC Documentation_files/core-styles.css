@@ -1,0 +1,8 @@
+/* Relative paths to local Core-Styles (until we have dynamic URLs or CDN) */
+/* SEE: https://github.com/TACC/Core-Styles */
+
+/* For foundation layer instead of base, so that readthedocs nav styles win */
+@import url("./core-styles/core-styles.base.css") layer(base);
+
+@import url("./core-styles/core-styles.docs.css") layer(base);
+@import url("./core-styles/core-styles.docs-candidates.css") layer(base);

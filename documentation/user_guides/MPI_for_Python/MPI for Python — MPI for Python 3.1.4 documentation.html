@@ -1,0 +1,402 @@
+<!DOCTYPE html>
+<!-- saved from url=(0051)https://mpi4py.readthedocs.io/en/stable/index.html# -->
+<html class="writer-html5" lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/">
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>MPI for Python — MPI for Python 3.1.4 documentation</title>
+      <link rel="stylesheet" href="./MPI for Python — MPI for Python 3.1.4 documentation_files/pygments.css" type="text/css">
+      <link rel="stylesheet" href="./MPI for Python — MPI for Python 3.1.4 documentation_files/theme.css" type="text/css">
+      <link rel="stylesheet" href="./MPI for Python — MPI for Python 3.1.4 documentation_files/custom.css" type="text/css">
+    <link rel="canonical" href="https://mpi4py.readthedocs.io/en/stable/index.html">
+  <!--[if lt IE 9]>
+    <script src="_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script type="text/javascript" async="" src="./MPI for Python — MPI for Python 3.1.4 documentation_files/analytics.js"></script><script type="text/javascript" async="" src="./MPI for Python — MPI for Python 3.1.4 documentation_files/js"></script><script type="text/javascript" async="" src="./MPI for Python — MPI for Python 3.1.4 documentation_files/analytics.js"></script><script data-url_root="./" id="documentation_options" src="./MPI for Python — MPI for Python 3.1.4 documentation_files/documentation_options.js"></script>
+        <script src="./MPI for Python — MPI for Python 3.1.4 documentation_files/jquery.js"></script>
+        <script src="./MPI for Python — MPI for Python 3.1.4 documentation_files/underscore.js"></script>
+        <script src="./MPI for Python — MPI for Python 3.1.4 documentation_files/doctools.js"></script>
+        <script async="async" src="./MPI for Python — MPI for Python 3.1.4 documentation_files/readthedocs-doc-embed.js"></script>
+    <script src="./MPI for Python — MPI for Python 3.1.4 documentation_files/theme.js"></script>
+    <link rel="index" title="Index" href="https://mpi4py.readthedocs.io/en/stable/genindex.html">
+    <link rel="search" title="Search" href="https://mpi4py.readthedocs.io/en/stable/search.html">
+    <link rel="next" title="Introduction" href="https://mpi4py.readthedocs.io/en/stable/intro.html"> 
+
+<!-- RTD Extra Head -->
+
+<link rel="stylesheet" href="./MPI for Python — MPI for Python 3.1.4 documentation_files/readthedocs-doc-embed.css" type="text/css">
+
+<script type="application/json" id="READTHEDOCS_DATA">{"ad_free": false, "api_host": "https://readthedocs.org", "build_date": "2023-04-10T17:34:28Z", "builder": "sphinx", "canonical_url": null, "commit": "a7610e53", "docroot": "/docs/source/usrman/", "features": {"docsearch_disabled": false}, "global_analytics_code": "UA-17997319-1", "language": "en", "page": "index", "programming_language": "py", "project": "mpi4py", "proxied_api_host": "/_", "source_suffix": ".rst", "subprojects": {}, "theme": "sphinx_rtd_theme", "user_analytics_code": "UA-48837848-1", "version": "stable"}</script>
+
+<!--
+Using this variable directly instead of using `JSON.parse` is deprecated.
+The READTHEDOCS_DATA global variable will be removed in the future.
+-->
+<script type="text/javascript">
+READTHEDOCS_DATA = JSON.parse(document.getElementById('READTHEDOCS_DATA').innerHTML);
+</script>
+
+<script type="text/javascript" src="./MPI for Python — MPI for Python 3.1.4 documentation_files/readthedocs-analytics.js" async="async"></script>
+
+<!-- end RTD <extrahead> -->
+<script src="./MPI for Python — MPI for Python 3.1.4 documentation_files/ethicalads.min.js" type="text/javascript" async="" id="ethicaladsjs"></script><style>[data-ea-publisher].loaded,[data-ea-type].loaded{font-size:14px;font-family:-apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica Neue, Arial, Noto Sans, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol, Noto Color Emoji;font-weight:normal;font-style:normal;leter-spacing:0px;vertical-align:baseline;line-height:1.3em}[data-ea-publisher].loaded a,[data-ea-type].loaded a{text-decoration:none}[data-ea-publisher].loaded .ea-pixel,[data-ea-type].loaded .ea-pixel{display:none}[data-ea-publisher].loaded .ea-content,[data-ea-type].loaded .ea-content{margin:1em 1em 0.5em 1em;padding:1em;background:rgba(0,0,0,0.03);color:#505050}[data-ea-publisher].loaded .ea-content a:link,[data-ea-type].loaded .ea-content a:link{color:#505050}[data-ea-publisher].loaded .ea-content a:visited,[data-ea-type].loaded .ea-content a:visited{color:#505050}[data-ea-publisher].loaded .ea-content a:hover,[data-ea-type].loaded .ea-content a:hover{color:#373737}[data-ea-publisher].loaded .ea-content a:active,[data-ea-type].loaded .ea-content a:active{color:#373737}[data-ea-publisher].loaded .ea-content a strong,[data-ea-publisher].loaded .ea-content a b,[data-ea-type].loaded .ea-content a strong,[data-ea-type].loaded .ea-content a b{color:#088cdb}[data-ea-publisher].loaded .ea-callout a:link,[data-ea-type].loaded .ea-callout a:link{color:#6a6a6a}[data-ea-publisher].loaded .ea-callout a:visited,[data-ea-type].loaded .ea-callout a:visited{color:#6a6a6a}[data-ea-publisher].loaded .ea-callout a:hover,[data-ea-type].loaded .ea-callout a:hover{color:#505050}[data-ea-publisher].loaded .ea-callout a:active,[data-ea-type].loaded .ea-callout a:active{color:#505050}[data-ea-publisher].loaded .ea-callout a strong,[data-ea-publisher].loaded .ea-callout a b,[data-ea-type].loaded .ea-callout a strong,[data-ea-type].loaded .ea-callout a b{color:#088cdb}[data-ea-publisher].loaded .ea-callout a,[data-ea-type].loaded .ea-callout a{font-size:0.8em}[data-ea-publisher].loaded.dark .ea-content,[data-ea-type].loaded.dark .ea-content{background:rgba(255,255,255,0.05);color:#dcdcdc}[data-ea-publisher].loaded.dark .ea-content a:link,[data-ea-type].loaded.dark .ea-content a:link{color:#dcdcdc}[data-ea-publisher].loaded.dark .ea-content a:visited,[data-ea-type].loaded.dark .ea-content a:visited{color:#dcdcdc}[data-ea-publisher].loaded.dark .ea-content a:hover,[data-ea-type].loaded.dark .ea-content a:hover{color:#f6f6f6}[data-ea-publisher].loaded.dark .ea-content a:active,[data-ea-type].loaded.dark .ea-content a:active{color:#f6f6f6}[data-ea-publisher].loaded.dark .ea-content a strong,[data-ea-publisher].loaded.dark .ea-content a b,[data-ea-type].loaded.dark .ea-content a strong,[data-ea-type].loaded.dark .ea-content a b{color:#50baf9}[data-ea-publisher].loaded.dark .ea-callout a:link,[data-ea-type].loaded.dark .ea-callout a:link{color:#c3c3c3}[data-ea-publisher].loaded.dark .ea-callout a:visited,[data-ea-type].loaded.dark .ea-callout a:visited{color:#c3c3c3}[data-ea-publisher].loaded.dark .ea-callout a:hover,[data-ea-type].loaded.dark .ea-callout a:hover{color:#dcdcdc}[data-ea-publisher].loaded.dark .ea-callout a:active,[data-ea-type].loaded.dark .ea-callout a:active{color:#dcdcdc}[data-ea-publisher].loaded.dark .ea-callout a strong,[data-ea-publisher].loaded.dark .ea-callout a b,[data-ea-type].loaded.dark .ea-callout a strong,[data-ea-type].loaded.dark .ea-callout a b{color:#50baf9}@media (prefers-color-scheme: dark){[data-ea-publisher].loaded.adaptive .ea-content,[data-ea-type].loaded.adaptive .ea-content{background:rgba(255,255,255,0.05);color:#dcdcdc}[data-ea-publisher].loaded.adaptive .ea-content a:link,[data-ea-type].loaded.adaptive .ea-content a:link{color:#dcdcdc}[data-ea-publisher].loaded.adaptive .ea-content a:visited,[data-ea-type].loaded.adaptive .ea-content a:visited{color:#dcdcdc}[data-ea-publisher].loaded.adaptive .ea-content a:hover,[data-ea-type].loaded.adaptive .ea-content a:hover{color:#f6f6f6}[data-ea-publisher].loaded.adaptive .ea-content a:active,[data-ea-type].loaded.adaptive .ea-content a:active{color:#f6f6f6}[data-ea-publisher].loaded.adaptive .ea-content a strong,[data-ea-publisher].loaded.adaptive .ea-content a b,[data-ea-type].loaded.adaptive .ea-content a strong,[data-ea-type].loaded.adaptive .ea-content a b{color:#50baf9}[data-ea-publisher].loaded.adaptive .ea-callout a:link,[data-ea-type].loaded.adaptive .ea-callout a:link{color:#c3c3c3}[data-ea-publisher].loaded.adaptive .ea-callout a:visited,[data-ea-type].loaded.adaptive .ea-callout a:visited{color:#c3c3c3}[data-ea-publisher].loaded.adaptive .ea-callout a:hover,[data-ea-type].loaded.adaptive .ea-callout a:hover{color:#dcdcdc}[data-ea-publisher].loaded.adaptive .ea-callout a:active,[data-ea-type].loaded.adaptive .ea-callout a:active{color:#dcdcdc}[data-ea-publisher].loaded.adaptive .ea-callout a strong,[data-ea-publisher].loaded.adaptive .ea-callout a b,[data-ea-type].loaded.adaptive .ea-callout a strong,[data-ea-type].loaded.adaptive .ea-callout a b{color:#50baf9}}[data-ea-publisher].loaded .ea-content,[data-ea-type].loaded .ea-content{border:0px;border-radius:3px;box-shadow:0px 2px 3px rgba(0,0,0,0.15)}[data-ea-publisher].loaded.raised .ea-content,[data-ea-type].loaded.raised .ea-content{border:0px;border-radius:3px;box-shadow:0px 2px 3px rgba(0,0,0,0.15)}[data-ea-publisher].loaded.bordered .ea-content,[data-ea-type].loaded.bordered .ea-content{border:1px solid rgba(0,0,0,0.04);border-radius:3px;box-shadow:none}[data-ea-publisher].loaded.bordered.dark .ea-content,[data-ea-type].loaded.bordered.dark .ea-content{border:1px solid rgba(255,255,255,0.07)}@media (prefers-color-scheme: dark){[data-ea-publisher].loaded.bordered.adaptive .ea-content,[data-ea-type].loaded.bordered.adaptive .ea-content{border:1px solid rgba(255,255,255,0.07)}}[data-ea-publisher].loaded.flat .ea-content,[data-ea-type].loaded.flat .ea-content{border:0px;border-radius:3px;box-shadow:none}[data-ea-type="image"].loaded,[data-ea-publisher]:not([data-ea-type]).loaded,.ea-type-image{display:inline-block}[data-ea-type="image"].loaded .ea-content,[data-ea-publisher]:not([data-ea-type]).loaded .ea-content,.ea-type-image .ea-content{max-width:180px;overflow:auto;text-align:center}[data-ea-type="image"].loaded .ea-content>a>img,[data-ea-publisher]:not([data-ea-type]).loaded .ea-content>a>img,.ea-type-image .ea-content>a>img{width:120px;height:90px;display:inline-block}[data-ea-type="image"].loaded .ea-content>.ea-text,[data-ea-publisher]:not([data-ea-type]).loaded .ea-content>.ea-text,.ea-type-image .ea-content>.ea-text{margin-top:1em;font-size:1em;text-align:center}[data-ea-type="image"].loaded .ea-callout,[data-ea-publisher]:not([data-ea-type]).loaded .ea-callout,.ea-type-image .ea-callout{max-width:180px;margin:0em 1em 1em 1em;padding-left:1em;padding-right:1em;font-style:italic;text-align:right}[data-ea-type="image"].loaded.horizontal .ea-content,[data-ea-publisher]:not([data-ea-type]).loaded.horizontal .ea-content,.ea-type-image.horizontal .ea-content{max-width:320px}[data-ea-type="image"].loaded.horizontal .ea-content>a>img,[data-ea-publisher]:not([data-ea-type]).loaded.horizontal .ea-content>a>img,.ea-type-image.horizontal .ea-content>a>img{float:left;margin-right:1em}[data-ea-type="image"].loaded.horizontal .ea-content .ea-text,[data-ea-publisher]:not([data-ea-type]).loaded.horizontal .ea-content .ea-text,.ea-type-image.horizontal .ea-content .ea-text{margin-top:0em;text-align:left;overflow:auto}[data-ea-type="image"].loaded.horizontal .ea-callout,[data-ea-publisher]:not([data-ea-type]).loaded.horizontal .ea-callout,.ea-type-image.horizontal .ea-callout{max-width:320px;text-align:right}[data-ea-type="text"].loaded,.ea-type-text{font-size:14px}[data-ea-type="text"].loaded .ea-content,.ea-type-text .ea-content{text-align:left}[data-ea-type="text"].loaded .ea-callout,.ea-type-text .ea-callout{margin:0.5em 1em 1em 1em;padding-left:1em;padding-right:1em;text-align:right;font-style:italic}[data-ea-style="stickybox"].loaded{position:fixed;bottom:20px;right:20px;z-index:10}[data-ea-style="stickybox"].loaded .ea-type-image .ea-stickybox-hide{cursor:pointer;position:absolute;top:0.75em;right:0.75em;background-color:#fefefe;border:1px solid #088cdb;border-radius:50%;color:#088cdb;font-size:1em;text-align:center;height:1.5em;width:1.5em;line-height:1.5em}@media (max-width: 1300px){[data-ea-style="stickybox"].loaded{position:static;bottom:0;right:0;margin:auto;text-align:center}[data-ea-style="stickybox"].loaded .ea-stickybox-hide{display:none}}@media (min-width: 1301px){[data-ea-style="stickybox"].loaded .ea-type-image .ea-content{background:#dcdcdc}[data-ea-style="stickybox"].loaded.dark .ea-type-image .ea-content{background:#505050}}@media (min-width: 1301px) and (prefers-color-scheme: dark){[data-ea-style="stickybox"].loaded.adaptive .ea-type-image .ea-content{background:#505050}}[data-ea-style="fixedfooter"].loaded{position:fixed;bottom:0;left:0;z-index:10;width:100%;max-width:100%}[data-ea-style="fixedfooter"].loaded .ea-type-text{width:100%;max-width:100%;display:flex;z-index:10;background:#dcdcdc}[data-ea-style="fixedfooter"].loaded .ea-type-text .ea-content{border:0px;border-radius:3px;box-shadow:none}[data-ea-style="fixedfooter"].loaded .ea-type-text .ea-content{background-color:inherit;max-width:100%;margin:0;padding:1em;flex:auto}[data-ea-style="fixedfooter"].loaded .ea-type-text .ea-callout{max-width:100%;margin:0;padding:1em;flex:initial}@media (max-width: 576px){[data-ea-style="fixedfooter"].loaded .ea-type-text .ea-callout{display:none}}[data-ea-style="fixedfooter"].loaded .ea-type-text .ea-fixedfooter-hide{cursor:pointer;color:#505050;padding:1em;flex:initial;margin:auto 0}[data-ea-style="fixedfooter"].loaded .ea-type-text .ea-fixedfooter-hide span{padding:0.25em;font-size:0.8em;font-weight:bold;border:0.15em solid #505050;border-radius:0.5em;white-space:nowrap}[data-ea-style="fixedfooter"].loaded.dark .ea-type-text{background:#505050}[data-ea-style="fixedfooter"].loaded.dark .ea-type-text .ea-fixedfooter-hide span{color:#dcdcdc;border-color:#dcdcdc}@media (prefers-color-scheme: dark){[data-ea-style="fixedfooter"].loaded.adaptive .ea-type-text{background:#505050}[data-ea-style="fixedfooter"].loaded.adaptive .ea-type-text .ea-fixedfooter-hide span{color:#dcdcdc;border-color:#dcdcdc}}
+</style><script src="./MPI for Python — MPI for Python 3.1.4 documentation_files/saved_resource" type="text/javascript" async=""></script><script src="./MPI for Python — MPI for Python 3.1.4 documentation_files/js(1)" type="text/javascript" async=""></script></head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+            <a href="https://mpi4py.readthedocs.io/en/stable/index.html#" class="icon icon-home"> MPI for Python
+          </a>
+              <div class="version">
+                stable
+              </div>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="https://mpi4py.readthedocs.io/en/stable/search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs">
+    <input type="hidden" name="check_keywords" value="yes">
+    <input type="hidden" name="area" value="default">
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+  
+              <p class="caption" role="heading"><span class="caption-text">Contents</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="https://mpi4py.readthedocs.io/en/stable/intro.html">Introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="https://mpi4py.readthedocs.io/en/stable/overview.html">Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="https://mpi4py.readthedocs.io/en/stable/tutorial.html">Tutorial</a></li>
+<li class="toctree-l1"><a class="reference internal" href="https://mpi4py.readthedocs.io/en/stable/mpi4py.html">mpi4py</a></li>
+<li class="toctree-l1"><a class="reference internal" href="https://mpi4py.readthedocs.io/en/stable/mpi4py.MPI.html">mpi4py.MPI</a></li>
+<li class="toctree-l1"><a class="reference internal" href="https://mpi4py.readthedocs.io/en/stable/mpi4py.futures.html">mpi4py.futures</a></li>
+<li class="toctree-l1"><a class="reference internal" href="https://mpi4py.readthedocs.io/en/stable/mpi4py.util.html">mpi4py.util</a></li>
+<li class="toctree-l1"><a class="reference internal" href="https://mpi4py.readthedocs.io/en/stable/mpi4py.run.html">mpi4py.run</a></li>
+<li class="toctree-l1"><a class="reference internal" href="https://mpi4py.readthedocs.io/en/stable/reference.html">Reference</a></li>
+<li class="toctree-l1"><a class="reference internal" href="https://mpi4py.readthedocs.io/en/stable/citing.html">Citation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="https://mpi4py.readthedocs.io/en/stable/install.html">Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="https://mpi4py.readthedocs.io/en/stable/appendix.html">Appendix</a></li>
+</ul>
+
+    <ul>
+  <li class="toctree-l1">
+    <a class="reference internal" href="https://mpi4py.readthedocs.io/en/stable/genindex.html">Index</a>
+  </li>
+</ul>
+
+        </div>
+      <div id="rtd-sidebar" data-ea-publisher="readthedocs" data-ea-type="readthedocs-sidebar" data-ea-manual="true" class="ethical-rtd ethical-dark-theme loaded" data-ea-keywords="mpi|mpi4py|python|readthedocs-project-9017|readthedocs-project-mpi4py" data-ea-campaign-types="community|house|paid"><div class="ethical-sidebar"><div class="ethical-content"><a href="https://server.ethicalads.io/proxy/click/3784/1f1afec8-cfed-4b89-8564-4cb250ce863d/" rel="nofollow noopener" target="_blank" class="ethical-image-link"><img src="./MPI for Python — MPI for Python 3.1.4 documentation_files/NVIDIA-RTX-Ampere-A6000-NVLinks_3Q-Front_Left_1mYCyTp.png" alt="Sponsored: Lambda Labs"></a><div class="ethical-text"><a href="https://server.ethicalads.io/proxy/click/3784/1f1afec8-cfed-4b89-8564-4cb250ce863d/" rel="nofollow noopener" target="_blank"><strong class="ea-headline">NVIDIA RTX™ A6000 GPU Cloud VMs </strong><span class="ea-body">Lambda Cloud  — Tensorflow, PyTorch &amp; CUDA preinstalled.</span><strong class="ea-cta"> Sign Up</strong></a></div></div><div class="ethical-callout"><small><em><a rel="nofollow noopener" target="_blank" href="https://www.ethicalads.io/?ref=rtd-sidebar">Ad by EthicalAds</a></em></small><span> &nbsp; · &nbsp; </span><a rel="nofollow noopener" target="_blank" href="https://www.ethicalads.io/advertisers/topics/data-science/?ref=rtd-sidebar-buy-ads">ℹ️</a></div></div><img src="./MPI for Python — MPI for Python 3.1.4 documentation_files/saved_resource(1)" class="ea-pixel"><img src="./MPI for Python — MPI for Python 3.1.4 documentation_files/saved_resource(2)" class="ea-pixel"></div></div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu">
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="https://mpi4py.readthedocs.io/en/stable/index.html#">MPI for Python</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="https://mpi4py.readthedocs.io/en/stable/index.html#" class="icon icon-home"></a> »</li>
+      <li>MPI for Python</li>
+      <li class="wy-breadcrumbs-aside">
+              <a href="https://github.com/mpi4py/mpi4py/blob/a7610e53b78841e1a607005d5b3ace7b9315f45b/docs/source/usrman/index.rst" class="fa fa-github"> Edit on GitHub</a>
+      </li>
+  </ul>
+  <hr>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="mpi-for-python">
+<h1>MPI for Python<a class="headerlink" href="https://mpi4py.readthedocs.io/en/stable/index.html#mpi-for-python" title="Permalink to this headline"></a></h1>
+<dl class="field-list simple">
+<dt class="field-odd">Author</dt>
+<dd class="field-odd"><p>Lisandro Dalcin</p>
+</dd>
+<dt class="field-even">Contact</dt>
+<dd class="field-even"><p><a class="reference external" href="mailto:dalcinl%40gmail.com">dalcinl<span>@</span>gmail<span>.</span>com</a></p>
+</dd>
+<dt class="field-odd">Date</dt>
+<dd class="field-odd"><p>Apr 10, 2023</p>
+</dd>
+</dl>
+<div class="topic">
+<p class="topic-title">Abstract</p>
+<p>This document describes the <em>MPI for Python</em> package. <em>MPI for
+Python</em> provides Python bindings for the <em>Message Passing
+Interface</em> (MPI) standard, allowing Python applications to exploit
+multiple processors on workstations, clusters and supercomputers.</p>
+<p>This package builds on the MPI specification and provides an object
+oriented interface resembling the MPI-2 C++ bindings. It supports
+point-to-point (sends, receives) and collective (broadcasts,
+scatters, gathers) communication of any <em>picklable</em> Python object,
+as well as efficient communication of Python objects exposing the
+Python buffer interface (e.g. NumPy arrays and builtin
+bytes/array/memoryview objects).</p>
+</div>
+<div class="toctree-wrapper compound">
+<p class="caption" role="heading"><span class="caption-text">Contents</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="https://mpi4py.readthedocs.io/en/stable/intro.html">Introduction</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="https://mpi4py.readthedocs.io/en/stable/intro.html#what-is-mpi">What is MPI?</a></li>
+<li class="toctree-l2"><a class="reference internal" href="https://mpi4py.readthedocs.io/en/stable/intro.html#what-is-python">What is Python?</a></li>
+<li class="toctree-l2"><a class="reference internal" href="https://mpi4py.readthedocs.io/en/stable/intro.html#related-projects">Related Projects</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="https://mpi4py.readthedocs.io/en/stable/overview.html">Overview</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="https://mpi4py.readthedocs.io/en/stable/overview.html#communicating-python-objects-and-array-data">Communicating Python Objects and Array Data</a></li>
+<li class="toctree-l2"><a class="reference internal" href="https://mpi4py.readthedocs.io/en/stable/overview.html#communicators">Communicators</a></li>
+<li class="toctree-l2"><a class="reference internal" href="https://mpi4py.readthedocs.io/en/stable/overview.html#point-to-point-communications">Point-to-Point Communications</a></li>
+<li class="toctree-l2"><a class="reference internal" href="https://mpi4py.readthedocs.io/en/stable/overview.html#collective-communications">Collective Communications</a></li>
+<li class="toctree-l2"><a class="reference internal" href="https://mpi4py.readthedocs.io/en/stable/overview.html#support-for-gpu-aware-mpi">Support for GPU-aware MPI</a></li>
+<li class="toctree-l2"><a class="reference internal" href="https://mpi4py.readthedocs.io/en/stable/overview.html#dynamic-process-management">Dynamic Process Management</a></li>
+<li class="toctree-l2"><a class="reference internal" href="https://mpi4py.readthedocs.io/en/stable/overview.html#one-sided-communications">One-Sided Communications</a></li>
+<li class="toctree-l2"><a class="reference internal" href="https://mpi4py.readthedocs.io/en/stable/overview.html#parallel-input-output">Parallel Input/Output</a></li>
+<li class="toctree-l2"><a class="reference internal" href="https://mpi4py.readthedocs.io/en/stable/overview.html#environmental-management">Environmental Management</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="https://mpi4py.readthedocs.io/en/stable/tutorial.html">Tutorial</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="https://mpi4py.readthedocs.io/en/stable/tutorial.html#running-python-scripts-with-mpi">Running Python scripts with MPI</a></li>
+<li class="toctree-l2"><a class="reference internal" href="https://mpi4py.readthedocs.io/en/stable/tutorial.html#point-to-point-communication">Point-to-Point Communication</a></li>
+<li class="toctree-l2"><a class="reference internal" href="https://mpi4py.readthedocs.io/en/stable/tutorial.html#collective-communication">Collective Communication</a></li>
+<li class="toctree-l2"><a class="reference internal" href="https://mpi4py.readthedocs.io/en/stable/tutorial.html#mpi-io">MPI-IO</a></li>
+<li class="toctree-l2"><a class="reference internal" href="https://mpi4py.readthedocs.io/en/stable/tutorial.html#dynamic-process-management">Dynamic Process Management</a></li>
+<li class="toctree-l2"><a class="reference internal" href="https://mpi4py.readthedocs.io/en/stable/tutorial.html#cuda-aware-mpi-python-gpu-arrays">CUDA-aware MPI + Python GPU arrays</a></li>
+<li class="toctree-l2"><a class="reference internal" href="https://mpi4py.readthedocs.io/en/stable/tutorial.html#one-sided-communications">One-Sided Communications</a></li>
+<li class="toctree-l2"><a class="reference internal" href="https://mpi4py.readthedocs.io/en/stable/tutorial.html#wrapping-with-swig">Wrapping with SWIG</a></li>
+<li class="toctree-l2"><a class="reference internal" href="https://mpi4py.readthedocs.io/en/stable/tutorial.html#wrapping-with-f2py">Wrapping with F2Py</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="https://mpi4py.readthedocs.io/en/stable/mpi4py.html">mpi4py</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="https://mpi4py.readthedocs.io/en/stable/mpi4py.html#runtime-configuration-options">Runtime configuration options</a></li>
+<li class="toctree-l2"><a class="reference internal" href="https://mpi4py.readthedocs.io/en/stable/mpi4py.html#environment-variables">Environment variables</a></li>
+<li class="toctree-l2"><a class="reference internal" href="https://mpi4py.readthedocs.io/en/stable/mpi4py.html#miscellaneous-functions">Miscellaneous functions</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="https://mpi4py.readthedocs.io/en/stable/mpi4py.MPI.html">mpi4py.MPI</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="https://mpi4py.readthedocs.io/en/stable/mpi4py.MPI.html#classes">Classes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="https://mpi4py.readthedocs.io/en/stable/mpi4py.MPI.html#functions">Functions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="https://mpi4py.readthedocs.io/en/stable/mpi4py.MPI.html#attributes">Attributes</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="https://mpi4py.readthedocs.io/en/stable/mpi4py.futures.html">mpi4py.futures</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="https://mpi4py.readthedocs.io/en/stable/mpi4py.futures.html#concurrent-futures">concurrent.futures</a></li>
+<li class="toctree-l2"><a class="reference internal" href="https://mpi4py.readthedocs.io/en/stable/mpi4py.futures.html#mpipoolexecutor">MPIPoolExecutor</a></li>
+<li class="toctree-l2"><a class="reference internal" href="https://mpi4py.readthedocs.io/en/stable/mpi4py.futures.html#mpicommexecutor">MPICommExecutor</a></li>
+<li class="toctree-l2"><a class="reference internal" href="https://mpi4py.readthedocs.io/en/stable/mpi4py.futures.html#command-line">Command line</a></li>
+<li class="toctree-l2"><a class="reference internal" href="https://mpi4py.readthedocs.io/en/stable/mpi4py.futures.html#examples">Examples</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="https://mpi4py.readthedocs.io/en/stable/mpi4py.util.html">mpi4py.util</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="https://mpi4py.readthedocs.io/en/stable/mpi4py.util.pkl5.html">mpi4py.util.pkl5</a></li>
+<li class="toctree-l2"><a class="reference internal" href="https://mpi4py.readthedocs.io/en/stable/mpi4py.util.dtlib.html">mpi4py.util.dtlib</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="https://mpi4py.readthedocs.io/en/stable/mpi4py.run.html">mpi4py.run</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="https://mpi4py.readthedocs.io/en/stable/mpi4py.run.html#interface-options">Interface options</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="https://mpi4py.readthedocs.io/en/stable/reference.html">Reference</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="https://mpi4py.readthedocs.io/en/stable/reference/mpi4py.MPI.html">mpi4py.MPI</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="https://mpi4py.readthedocs.io/en/stable/citing.html">Citation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="https://mpi4py.readthedocs.io/en/stable/install.html">Installation</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="https://mpi4py.readthedocs.io/en/stable/install.html#requirements">Requirements</a></li>
+<li class="toctree-l2"><a class="reference internal" href="https://mpi4py.readthedocs.io/en/stable/install.html#using-pip">Using <strong>pip</strong></a></li>
+<li class="toctree-l2"><a class="reference internal" href="https://mpi4py.readthedocs.io/en/stable/install.html#using-distutils">Using <strong>distutils</strong></a></li>
+<li class="toctree-l2"><a class="reference internal" href="https://mpi4py.readthedocs.io/en/stable/install.html#testing">Testing</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="https://mpi4py.readthedocs.io/en/stable/appendix.html">Appendix</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="https://mpi4py.readthedocs.io/en/stable/appendix.html#mpi-enabled-python-interpreter">MPI-enabled Python interpreter</a></li>
+<li class="toctree-l2"><a class="reference internal" href="https://mpi4py.readthedocs.io/en/stable/appendix.html#building-mpi-from-sources">Building MPI from sources</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<ul class="simple">
+<li><p><a class="reference internal" href="https://mpi4py.readthedocs.io/en/stable/genindex.html"><span class="std std-ref">Index</span></a></p></li>
+</ul>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="https://mpi4py.readthedocs.io/en/stable/intro.html" class="btn btn-neutral float-right" title="Introduction" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr>
+
+  <div role="contentinfo">
+    <p>© Copyright 2023, Lisandro Dalcin.
+      <span class="commit">Revision <code>a7610e53</code>.
+      </span></p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org/">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  
+
+  <div class="rst-versions" data-toggle="rst-versions" role="note" aria-label="Versions">
+    <span class="rst-current-version" data-toggle="rst-current-version">
+      <span class="fa fa-book"> Read the Docs</span>
+      v: stable
+      <span class="fa fa-caret-down"></span>
+    </span>
+    <div class="rst-other-versions"><!-- Inserted RTD Footer -->
+
+<div class="injected">
+
+  
+
+      
+      
+      
+      <dl>
+        <dt>Versions</dt>
+        
+        <dd>
+          <a href="https://mpi4py.readthedocs.io/en/latest/">latest</a>
+        </dd>
+        
+        <dd class="rtd-current-item">
+          <a href="https://mpi4py.readthedocs.io/en/stable/">stable</a>
+        </dd>
+        
+        <dd>
+          <a href="https://mpi4py.readthedocs.io/en/3.1.4/">3.1.4</a>
+        </dd>
+        
+        <dd>
+          <a href="https://mpi4py.readthedocs.io/en/3.1.3/">3.1.3</a>
+        </dd>
+        
+        <dd>
+          <a href="https://mpi4py.readthedocs.io/en/3.1.2/">3.1.2</a>
+        </dd>
+        
+        <dd>
+          <a href="https://mpi4py.readthedocs.io/en/3.1.1/">3.1.1</a>
+        </dd>
+        
+        <dd>
+          <a href="https://mpi4py.readthedocs.io/en/3.1.0/">3.1.0</a>
+        </dd>
+        
+        <dd>
+          <a href="https://mpi4py.readthedocs.io/en/3.0.3/">3.0.3</a>
+        </dd>
+        
+        <dd>
+          <a href="https://mpi4py.readthedocs.io/en/3.0.2/">3.0.2</a>
+        </dd>
+        
+        <dd>
+          <a href="https://mpi4py.readthedocs.io/en/3.0.1/">3.0.1</a>
+        </dd>
+        
+        <dd>
+          <a href="https://mpi4py.readthedocs.io/en/3.0.0/">3.0.0</a>
+        </dd>
+        
+        <dd>
+          <a href="https://mpi4py.readthedocs.io/en/2.0.0/">2.0.0</a>
+        </dd>
+        
+      </dl>
+      
+      
+
+      
+      
+      <dl>
+        <dt>Downloads</dt>
+        
+        <dd><a href="https://mpi4py.readthedocs.io/_/downloads/en/stable/pdf/">PDF</a></dd>
+        
+        <dd><a href="https://mpi4py.readthedocs.io/_/downloads/en/stable/htmlzip/">HTML</a></dd>
+        
+        <dd><a href="https://mpi4py.readthedocs.io/_/downloads/en/stable/epub/">Epub</a></dd>
+        
+      </dl>
+      
+      
+
+      
+      <dl>
+        
+        <!-- These are kept as relative links for internal installs that are http -->
+        <dt>On Read the Docs</dt>
+        <dd>
+          <a href="https://readthedocs.org/projects/mpi4py/">Project Home</a>
+        </dd>
+        <dd>
+          <a href="https://readthedocs.org/projects/mpi4py/builds/">Builds</a>
+        </dd>
+        <dd>
+          <a href="https://readthedocs.org/projects/mpi4py/downloads/">Downloads</a>
+        </dd>
+      </dl>
+      
+
+      
+
+      
+      <dl>
+        <dt>On GitHub</dt>
+        <dd>
+          <a href="https://github.com/mpi4py/mpi4py/blob/a7610e53b78841e1a607005d5b3ace7b9315f45b/docs/source/usrman/index.rst">View</a>
+        </dd>
+        
+      </dl>
+      
+      
+
+      
+      <dl>
+        <dt>Search</dt>
+        <dd>
+          <div style="padding: 6px;">
+            
+            <form id="flyout-search-form" class="wy-form" target="_blank" action="https://readthedocs.org/projects/mpi4py/search/" method="get">
+              <input type="text" name="q" aria-label="Search docs" placeholder="Search docs">
+              </form>
+          </div>
+        </dd>
+      </dl>
+      
+
+      <hr>
+
+      
+        <small>
+          <span>Hosted by <a href="https://readthedocs.org/">Read the Docs</a></span>
+          <span> · </span>
+          <a href="https://docs.readthedocs.io/page/privacy-policy.html">Privacy Policy</a>
+        </small>
+      
+
+      
+
+</div>
+</div>
+  </div>
+<script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+
+</body></html>
