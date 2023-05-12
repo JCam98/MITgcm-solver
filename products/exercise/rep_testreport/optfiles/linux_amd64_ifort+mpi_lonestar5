@@ -1,0 +1,59 @@
+#!/bin/bash
+#  
+# For running on TACC's Lonestar 5 
+#  Compiler optimizations for Intel E5-2690 (Haswell) Processors
+#
+# Note: be sure to load the following modules
+#
+#  (defaults) module load TACC intel cray_mpich
+#  module load netcdf
+#  
+#-------
+
+CC=icc
+FC=ifort
+F90C=ifort
+LINK="$F90C -no-ipo"
+
+DEFINES='-DALLOW_USE_MPI -DALWAYS_USE_MPI -DWORDLENGTH=4'
+CPP='cpp -traditional -P'
+F90FIXEDFORMAT='-fixed -Tf'
+EXTENDED_SRC_FLAG='-132'
+GET_FC_VERSION="--version"
+OMPFLAG='-openmp'
+
+NOOPTFILES='-O1 -fp-model precise -g -xCORE-AVX2'
+
+FFLAGS="$FFLAGS -W0 -WB -convert big_endian -assume byterecl"
+FFLAGS="$FFLAGS -fPIC"
+FFLAGS="$FFLAGS -mcmodel=large -shared-intel"
+#- might want to use '-r8' for fizhi pkg:
+#FFLAGS="$FFLAGS -r8"
+FFLAGS="$FFLAGS -warn all -warn nounused"
+
+FOPTIM='-O3 -align -traceback -xCORE-AVX2 -ip -ftz -fp-model precise'
+NOOPTFILES='obcs_set_connect.F obcs_init_fixed.F'
+NOOPTFILES='seaice_growth.F calc_oce_mxlayer.F fizhi_lsm.F fizhi_clockstuff.F'
+
+F90FLAGS=$FFLAGS
+F90OPTIM=$FOPTIM
+CFLAGS='-O0 -ip -fPIC'
+
+# Test if MPICH is set
+if [ -z ${MPICH_DIR} ] ; then
+	echo "MPICH unset ... "
+else
+    INCLUDEDIRS="${MPICH_DIR}/include"
+    INCLUDES="-I${MPICH_DIR}/include"
+    LIBS="-L${MPICH_DIR}/lib -lmpich"
+	MPIINCLUDEDIR="${MPICH_DIR}/include"
+fi
+
+# Now test for netcdf 
+if [ -z ${TACC_NETCDF_INC} ] ; then
+	echo "NETCDF unset ... "	
+else
+	INCLUDEDIRS="${INCLUDEDIRS} ${TACC_NETCDF_INC}"
+	INCLUDES="${INCLUDES} -I${TACC_NETCDF_INC}"
+	LIBS="${LIBS} -L${TACC_NETCDF_LIB} -lnetcdf -lnetcdff"
+fi
