@@ -19,8 +19,7 @@ RUN git clone https://github.com/MITgcm/MITgcm.git
 # Copy files from docker development environment into docker container
 COPY run_testreport.sh /code/run_testreport.sh 
 
-# Run testreport executable and write standard output and error to files
+# Grant end user permissions to read and execute script and add to path
 RUN chmod +rx /code/run_testreport.sh
 ENV PATH "/code:$PATH"
-RUN ./code/run_testreport.sh
 

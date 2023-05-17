@@ -5,5 +5,6 @@
 # the standard output and error output to text files
 
 cd '/MITgcm/verification'
-source testreport > testreport_out.txt 2>test_report_err.txt
+mkdir '/output'
+source testreport > /output/testreport_out.txt 2>/output/test_report_err.txt
 
