@@ -1,0 +1,6 @@
+!#/bin/bash
+
+# Run this code in your build or src subdirectory
+../../MITgcm/MITgcm_c65q/tools/genmake2 -rd=../../MITgcm/MITgcm_c65q '-mods=../code_layers_SP2C_TSjointspace_wsurf/ ../CODE_MODS_COLLECTION_ATN/code_logdiffkr/ ../CODE_MODS_COLLECTION_ATN/code_BE2_dthetadr_sshv4mo_fix_sp1_SPvol/ ../CODE_MODS_COLLECTION_ATN/code_adv7_bypass_tamc/ ../CODE_MODS_COLLECTION_ATN/code_HP_mombudg/' -of=$1 -mpi
+
+# AVX2: 11 547 secs
