@@ -1,0 +1,73 @@
+#!/bin/bash
+#
+# For running on the CRIOS cluster Sverdrup
+#  Compiler optimizations for Intel E5-2695 v3 (Haswell) Processors
+#  Note: only difference from lonestar opt file is the netcdf module load
+#
+# Note: be sure to load the following modules
+#
+#  module load c7
+#  module load gnu7/7.2.0
+#  module load openmpi
+#
+#-------
+echo "NO MPI"
+DEFINES=''
+F90C=gfortran
+
+CC=gcc
+FC=gfortran
+LINK="$F90C"
+
+# NML_TERMINATOR: changes namelist EOF character from & to /
+DEFINES="$DEFINES -DWORDLENGTH=4 -DNML_TERMINATOR"
+EXTENDED_SRC_FLAG='-ffixed-line-length-132 -ffree-line-length-0'
+F90FIXEDFORMAT='-fixed -Tf'
+GET_FC_VERSION="--version"
+CPP='cpp -traditional -P'
+OMPFLAG='-fopenmp'
+
+NOOPTFLAGS='-O1 -fp-model precise'
+NOOPTFILES=''
+
+CFLAGS='-O0 -fPIC'
+FFLAGS="$FFLAGS -fconvert=big-endian -fimplicit-none"
+# for big objects:
+FFLAGS="$FFLAGS -fPIC"
+FFLAGS="$FFLAGS $EXTENDED_SRC_FLAG"
+
+#- for setting specific options, check compiler version:
+fcVers=`$FC -dumpversion | head -n 1 | sed 's/^[^0-9]* //;s/\..*$//'`
+if ! [[ $fcVers =~ ^[0-9]+$ ]] ; then
+  echo "    un-recognized Compiler-version '$fcVers' ; ignored (-> set to 0)" ; fcVers=0 ;
+else echo "    get Compiler-version: '$fcVers'" ; fi
+
+if [ $fcVers -ge 10 ] ; then
+  FFLAGS="$FFLAGS -fallow-argument-mismatch"
+fi
+
+if test "x$IEEE" = x ; then
+    FFLAGS="$FFLAGS -Wunused -Wuninitialized"
+    FOPTIM='-O3 -ftree-vectorize -funroll-loops'
+    NOOPTFLAGS='-O2 -funroll-loops'
+#    NOOPTFILES='gad_c4_adv_x.F gad_u3_adv_x.F'
+else
+    FFLAGS="$FFLAGS -Wall"
+    if test "x$DEVEL" = x ; then  #- no optimisation + IEEE :
+	FOPTIM='-O0'
+    else                          #- development/check options:
+	FOPTIM='-O0 -g -fbounds-check'
+	FOPTIM="$FOPTIM -ffpe-trap=invalid,zero,overflow -finit-real=inf"
+    fi
+fi
+
+#-- Coverage code --
+#FFLAGS="$FFLAGS --coverage"
+
+F90FLAGS=$FFLAGS
+F90OPTIM=$FOPTIM
+
+#-- NETCDF library and includes --
+INCLUDEDIRS="${NETCDF_FORTRAN_INC} ${NETCDF_INC}"
+INCLUDES="-I${NETCDF_FORTRAN_INC} -I${NETCDF_INC}"
+LIBS="-L${NETCDF_FORTRAN_LIB} -L${NETCDF_LIB} -lnetcdf -lnetcdff"
